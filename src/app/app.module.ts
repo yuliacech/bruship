@@ -12,6 +12,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { JumboSearchComponent } from './jumbo-search/jumbo-search.component';
 import { TopListComponent } from './top-list/top-list.component';
 import { TopAccommodationComponent } from './top-accommodation/top-accommodation.component';
+import { RatingComponent } from './rating/rating.component';
+import {AccommodationService} from './shared/accommodation.service';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
@@ -30,7 +32,8 @@ const BRUSHIP_ROUTES: Routes = [
     ContactUsComponent,
     JumboSearchComponent,
     TopListComponent,
-    TopAccommodationComponent
+    TopAccommodationComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,9 @@ const BRUSHIP_ROUTES: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
   ],
-  providers: [],
+  providers: [
+    AccommodationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

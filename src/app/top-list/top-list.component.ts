@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Accommodation} from '../shared/acommodation.model';
+import {Accommodation} from '../shared/accommodation.model';
+import {AccommodationService} from '../shared/accommodation.service';
 
 @Component({
   selector: 'bs-top-list',
@@ -9,14 +10,10 @@ import {Accommodation} from '../shared/acommodation.model';
 export class TopListComponent implements OnInit {
 
   topAccommodations: Accommodation[];
-  constructor() { }
+  constructor(private accommodationService: AccommodationService) { }
 
   ngOnInit() {
-    this.topAccommodations = [
-      {id: '1', name: 'Perfect place for a student', cover_photo: '../../assets/img/accommodations/1.jpg'},
-      {id: '2', name: 'Quite and spacious room', cover_photo: '../../assets/img/accommodations/2.jpg'},
-      {id: '3', name: 'Room ok for the price', cover_photo: '../../assets/img/accommodations/3.jpg'}
-    ];
+    this.topAccommodations = AccommodationService.getTopAccommodations();
   }
 
 }
