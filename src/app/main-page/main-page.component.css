@@ -1,0 +1,26 @@
+.main-page {
+  background-color: aqua;
+}
+
+.jumbotron-bg {
+  margin-top: 56px;
+  background: url("../../assets/img/atomium_1920.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  height: 350px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.layer {
+  background-color: rgba(189, 189, 189, 0.6);
+  height: 100%;
+  padding-top: 40px;
+}
+
+.jumbotron-text {
+  font-weight: 500;
+}
+

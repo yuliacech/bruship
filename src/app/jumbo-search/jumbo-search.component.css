@@ -1,0 +1,41 @@
+input {
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
+  width: 400px;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  margin: auto;
+  background: transparent;
+}
+
+input:focus {
+  width: 700px;
+  border-color: #BDBDBD;
+  color: #757575;
+  box-shadow: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #FFFFFF;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #FFFFFF;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #FFFFFF;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #FFFFFF;
+}
+:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #757575;
+}
+:focus::-moz-placeholder { /* Firefox 19+ */
+  color: #757575;
+}
+:focus:-ms-input-placeholder { /* IE 10+ */
+  color: #757575;
+}
+:focus:-moz-placeholder { /* Firefox 18- */
+  color: #757575;
+}
