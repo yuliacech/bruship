@@ -5,7 +5,7 @@ import {AccommodationService} from '../shared/accommodation.service';
 @Component({
   selector: 'bs-top-list',
   templateUrl: './top-list.component.html',
-  styleUrls: ['./top-list.component.css']
+  styleUrls: ['./top-list.component.less']
 })
 export class TopListComponent implements OnInit {
 
@@ -13,7 +13,7 @@ export class TopListComponent implements OnInit {
   constructor(private accommodationService: AccommodationService) { }
 
   ngOnInit() {
-    this.topAccommodations = AccommodationService.getTopAccommodations();
+    this.topAccommodations = this.accommodationService.getTopAccommodations();
   }
 
 }

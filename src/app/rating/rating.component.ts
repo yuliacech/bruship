@@ -3,7 +3,7 @@ import {Component, Input, OnInit} from '@angular/core';
 @Component({
   selector: 'bs-rating',
   templateUrl: './rating.component.html',
-  styleUrls: ['./rating.component.css']
+  styleUrls: ['./rating.component.less']
 })
 export class RatingComponent implements OnInit {
   @Input() rating: number;
@@ -13,13 +13,13 @@ export class RatingComponent implements OnInit {
   ngOnInit() {
   }
 
-  getStarSrcPath(index: number) {
+  getStarIcon(index: number) {
     if (index <= this.rating) {
-      return '../../assets/img/star.png';
+      return 'star';
     } else if (index >= Math.floor(this.rating ) && index < this.rating + 1 && this.rating >= Math.floor(this.rating) + 0.5) {
-      return '../../assets/img/star-half.png';
+      return 'star_half';
     } else {
-      return '../../assets/img/star-outline.png';
+      return 'star_border';
     }
   }
   getArray() {

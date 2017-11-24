@@ -4,7 +4,7 @@ import {Accommodation} from '../shared/accommodation.model';
 @Component({
   selector: 'bs-top-accommodation',
   templateUrl: './top-accommodation.component.html',
-  styleUrls: ['./top-accommodation.component.css']
+  styleUrls: ['./top-accommodation.component.less']
 })
 export class TopAccommodationComponent implements OnInit {
   @Input() accommodation: Accommodation;

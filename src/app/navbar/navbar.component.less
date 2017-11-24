@@ -1,3 +1,9 @@
+@import "../../palette";
+
+nav {
+  background: @darkPrimaryColor;
+}
+
 .nav-link, .navbar-brand {
   color: rgba(255, 255, 255, 0.87);
 }
@@ -7,18 +13,18 @@
 }
 
 .nav-item:hover {
-  background: #512DA8;
+  background: @darkPrimaryColor;
   border-radius: 2px;
 }
 
 .navbar-toggler:focus {
-  border-color: #FFEB3B;
+  border-color: @accentColor;
   outline: none;
 }
 
 .search-form {
-  border-color: #BDBDBD;
-  color: #757575;
+  border-color: @dividerColor;
+  color: @secondaryTextColor;
 }
 
 .search-form:focus {
@@ -26,12 +32,12 @@
 }
 
 .search-btn {
-  border-color: #FFEB3B;
-  color: #FFEB3B;
+  border-color: @accentColor;
+  color: @accentColor;
   font-weight: 500;
 }
 
 .search-btn:hover {
-  background-color: #FFEB3B;
-  color: #512DA8;
+  background-color: @accentColor;
+  color: @darkPrimaryColor;
 }
