@@ -20,6 +20,7 @@ const BRUSHIP_ROUTES: Routes = [
   { path: 'accommodations', component: AccommodationListComponent },
   { path: 'tips', component: TipListComponent },
   { path: 'contact_us', component: ContactUsComponent },
+  { path: '*', component: MainPageComponent }
 ];
 
 @NgModule({
@@ -38,10 +39,7 @@ const BRUSHIP_ROUTES: Routes = [
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot(
-      BRUSHIP_ROUTES,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
+    RouterModule.forRoot(BRUSHIP_ROUTES),
   ],
   providers: [
     AccommodationService
