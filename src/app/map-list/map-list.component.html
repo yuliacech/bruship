@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm top-title">
+      <h3>Best Brussels accommodations on the map</h3>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-sm-6">
+      <agm-map *ngIf="centralAccommodations" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker *ngFor="let accommodation of centralAccommodations"
+                    [latitude]="accommodation.latitude" [longitude]="accommodation.longitude">
+        </agm-marker>
+      </agm-map>
+    </div>
+
+    <div class="col-sm-6">
+
+
+    </div>
+
+  </div>
+
+</div>

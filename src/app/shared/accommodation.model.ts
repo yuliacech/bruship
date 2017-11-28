@@ -1,6 +1,8 @@
 export class Accommodation {
   id: string;
   name: string;
-  cover_photo: string;
+  coverPhoto: string;
   rating: number;
+  latitude: number;
+  longitude: number;
 }
