@@ -6,16 +6,16 @@
   </div>
   <div class="row">
 
-    <div class="col-sm-6">
+    <div class="col-sm-9">
       <agm-map *ngIf="centralAccommodations" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
         <agm-marker *ngFor="let accommodation of centralAccommodations"
-                    [latitude]="accommodation.latitude" [longitude]="accommodation.longitude">
+                    [latitude]="accommodation.latitude" [longitude]="accommodation.longitude" [label]="accommodation.id">
         </agm-marker>
       </agm-map>
     </div>
 
-    <div class="col-sm-6">
-
+    <div class="col-sm-3">
+      <bs-map-accommodation *ngFor="let accommodation of centralAccommodations" [accommodation]="accommodation"></bs-map-accommodation>
 
     </div>
 

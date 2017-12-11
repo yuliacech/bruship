@@ -1,0 +1,21 @@
+
+<div>
+  {{accommodation.id}}. {{accommodation.name}}
+</div>
+
+<div class="card-container">
+  <div>
+    <img src="{{accommodation.coverPhoto}}" alt="accommodation cover photo">
+  </div>
+  <div class="bottom-container">
+    <div>
+      <bs-address [address]="accommodation.address"></bs-address>
+    </div>
+    <div>
+      <bs-rating [rating]="accommodation.rating"></bs-rating>
+    </div>
+    <div>
+      <bs-price [price]="accommodation.price"></bs-price>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Accommodation} from '../shared/accommodation.model';
+import {Accommodation} from '../../shared/accommodation.model';
 
 @Component({
   selector: 'bs-top-accommodation',

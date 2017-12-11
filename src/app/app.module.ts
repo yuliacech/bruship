@@ -12,12 +12,14 @@ import { AccommodationListComponent } from './accommodation-list/accommodation-l
 import { TipListComponent } from './tip-list/tip-list.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { JumboSearchComponent } from './jumbo-search/jumbo-search.component';
-import { TopListComponent } from './top-list/top-list.component';
-import { TopAccommodationComponent } from './top-accommodation/top-accommodation.component';
-import { RatingComponent } from './rating/rating.component';
+import { TopAccommodationListComponent } from './top-accommodations/top-accommodation-list/top-accommodation-list.component';
+import { TopAccommodationComponent } from './top-accommodations/top-accommodation-detail/top-accommodation.component';
+import { RatingComponent } from './shared/rating/rating.component';
 import {AccommodationService} from './shared/accommodation.service';
-import { MapListComponent } from './map-list/map-list.component';
-import { MapDetailComponent } from './map-detail/map-detail.component';
+import { MapAccommodationListComponent } from './map-accommodations/map-accommodation-list/map-accommodation-list.component';
+import { MapAccommodationComponent } from './map-accommodations/map-accommodation-detail/map-accommodation.component';
+import { AddressComponent } from './shared/address/address.component';
+import { PriceComponent } from './shared/price/price.component';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
@@ -36,11 +38,13 @@ const BRUSHIP_ROUTES: Routes = [
     TipListComponent,
     ContactUsComponent,
     JumboSearchComponent,
-    TopListComponent,
+    TopAccommodationListComponent,
     TopAccommodationComponent,
     RatingComponent,
-    MapListComponent,
-    MapDetailComponent
+    MapAccommodationListComponent,
+    MapAccommodationComponent,
+    AddressComponent,
+    PriceComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,6 @@ const BRUSHIP_ROUTES: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBEqwaI0P1yyWmIZ7a4vUPljajobeGc8z8'
     })
-    // AIzaSyBEqwaI0P1yyWmIZ7a4vUPljajobeGc8z8
   ],
   providers: [
     AccommodationService

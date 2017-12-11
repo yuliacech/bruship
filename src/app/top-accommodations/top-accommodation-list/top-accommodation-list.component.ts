@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {Accommodation} from '../shared/accommodation.model';
-import {AccommodationService} from '../shared/accommodation.service';
+import {Accommodation} from '../../shared/accommodation.model';
+import {AccommodationService} from '../../shared/accommodation.service';
 
 const MAX_TOP_ACCOMMODATIONS_NUMBER = 3;
 @Component({
-  selector: 'bs-top-list',
-  templateUrl: './top-list.component.html',
-  styleUrls: ['./top-list.component.less']
+  selector: 'bs-top-accommodation-list',
+  templateUrl: './top-accommodation-list.component.html',
+  styleUrls: ['./top-accommodation-list.component.less']
 })
-export class TopListComponent implements OnInit {
+export class TopAccommodationListComponent implements OnInit {
 
   topAccommodations: Accommodation[];
   constructor(private accommodationService: AccommodationService) { }

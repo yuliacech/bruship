@@ -1,3 +1,6 @@
+import {Address} from './address.model';
+import {Price} from './price.model';
+
 export class Accommodation {
   id: string;
   name: string;
@@ -5,4 +8,6 @@ export class Accommodation {
   rating: number;
   latitude: number;
   longitude: number;
+  address: Address;
+  price: Price;
 }

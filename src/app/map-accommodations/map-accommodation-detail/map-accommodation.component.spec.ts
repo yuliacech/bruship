@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopListComponent } from './top-list.component';
+import { MapAccommodationComponent } from './map-accommodation.component';
 
-describe('TopListComponent', () => {
-  let component: TopListComponent;
-  let fixture: ComponentFixture<TopListComponent>;
+describe('MapAccommodationComponent', () => {
+  let component: MapAccommodationComponent;
+  let fixture: ComponentFixture<MapAccommodationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopListComponent ]
+      declarations: [ MapAccommodationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TopListComponent);
+    fixture = TestBed.createComponent(MapAccommodationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
