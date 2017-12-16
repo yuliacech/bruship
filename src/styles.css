@@ -28,3 +28,9 @@
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
+.emoji {
+  text-decoration: none;
+  color: #ccc;
+  font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", Times, Symbola, Aegyptus, Code2000, Code2001,
+  Code2002, Musica, serif, LastResort;
+}

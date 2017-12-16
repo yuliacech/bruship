@@ -20,6 +20,7 @@ import { MapAccommodationListComponent } from './map-accommodations/map-accommod
 import { MapAccommodationComponent } from './map-accommodations/map-accommodation-detail/map-accommodation.component';
 import { AddressComponent } from './shared/address/address.component';
 import { PriceComponent } from './shared/price/price.component';
+import { FooterComponent } from './footer/footer.component';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
@@ -44,7 +45,8 @@ const BRUSHIP_ROUTES: Routes = [
     MapAccommodationListComponent,
     MapAccommodationComponent,
     AddressComponent,
-    PriceComponent
+    PriceComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

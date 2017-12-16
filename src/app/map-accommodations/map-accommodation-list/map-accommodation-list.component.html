@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container map-accommodations-container">
   <div class="row">
     <div class="col-sm top-title">
       <h3>Best Brussels accommodations on the map</h3>
@@ -14,7 +14,7 @@
       </agm-map>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-sm-3 map-detail-container">
       <bs-map-accommodation *ngFor="let accommodation of centralAccommodations" [accommodation]="accommodation"></bs-map-accommodation>
 
     </div>
