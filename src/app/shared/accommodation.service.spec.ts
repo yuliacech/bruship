@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { AccommodationService } from './accommodation.service';
+import {HttpClientModule} from '@angular/common/http';
 
 describe('AccommodationService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AccommodationService]
+      providers: [AccommodationService],
+      imports: [HttpClientModule]
     });
   });
 
