@@ -3,11 +3,12 @@ import { AppComponent } from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {FooterComponent} from './footer/footer.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent, NavbarComponent
+        AppComponent, NavbarComponent, FooterComponent
       ],
       imports: [RouterTestingModule, NgbModule.forRoot()]
     }).compileComponents();
