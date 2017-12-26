@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('bruship App', () => {
+describe('bruship-test App', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('bruship App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to bs!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });

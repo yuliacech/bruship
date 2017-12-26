@@ -1,11 +1,10 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {environment} from '../environments/environment';
-
 @Component({
-  selector: 'bs-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.less']
 })
 export class AppComponent {
   constructor(private router: Router) {

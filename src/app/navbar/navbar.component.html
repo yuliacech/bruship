@@ -1,30 +1,26 @@
-<nav class="navbar navbar-dark navbar-expand-md">
+<nav class="navbar navbar-expand-sm navbar-dark background-primary-color">
   <a class="navbar-brand" routerLink="/">Bruship</a>
-  <button class="navbar-toggler"  type="button" (click)="isCollapsed = !isCollapsed"
-          [attr.aria-expanded]="!isCollapsed" aria-controls="main-navbar" aria-label="Toggle navigation">
+  <input type="checkbox" id="navbar-toggle-cbox">
+  <label for="navbar-toggle-cbox" class="navbar-toggler hidden-sm-up navbar-toggler-label" type="button"
+         data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header">
     <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="main-navbar" [ngbCollapse]="isCollapsed">
+  </label>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
           Home</a>
         <!-- TODO accessability <span class="sr-only">(current)</span> -->
+      </li><li class="nav-item">
+        <a class="nav-link" routerLink="/contact_us" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+          Contact us</a>
+        <!-- TODO accessability <span class="sr-only">(current)</span> -->
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/accommodations" routerLinkActive="active">Accommodations</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/tips" routerLinkActive="active">Tips</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/contact_us" routerLinkActive="active">Contact us</a>
-      </li>
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="search-form form-control mr-sm-2" type="text" placeholder="Type an address..." aria-label="Search">
-      <button class="search-btn btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="search-form form-control mr-sm-2" type="search" placeholder="Type an address..." aria-label="Search">
+      <button class="search-btn btn my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>

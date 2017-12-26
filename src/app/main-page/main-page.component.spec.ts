@@ -1,18 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainPageComponent } from './main-page.component';
-import {JumboSearchComponent} from '../jumbo-search/jumbo-search.component';
-import {TopAccommodationListComponent} from '../top-accommodations/top-accommodation-list/top-accommodation-list.component';
-import {MapAccommodationListComponent} from '../map-accommodations/map-accommodation-list/map-accommodation-list.component';
-import {FooterComponent} from '../footer/footer.component';
-import {TopAccommodationComponent} from '../top-accommodations/top-accommodation-detail/top-accommodation.component';
+import {AddressComponent} from '../accommodations/sections/address/address.component';
+import {TopListComponent} from '../accommodations/top-list/top-list.component';
+import {AppComponent} from '../app.component';
 import {AgmCoreModule} from '@agm/core';
-import {MapAccommodationComponent} from '../map-accommodations/map-accommodation-detail/map-accommodation.component';
-import {RatingComponent} from '../shared/rating/rating.component';
-import {AddressComponent} from '../shared/address/address.component';
-import {PriceComponent} from '../shared/price/price.component';
-import {AccommodationService} from '../shared/accommodation.service';
-import {AccommodationServiceMock} from '../shared/accommodation.service.mock';
+import {RouterTestingModule} from '@angular/router/testing';
+import {NavbarComponent} from '../navbar/navbar.component';
+import {PriceComponent} from '../accommodations/sections/price/price.component';
+import {TopDetailComponent} from '../accommodations/top-list/top-detail/top-detail.component';
+import {AccommodationService} from '../accommodations/shared/accommodation.service';
+import {AccommodationServiceMock} from '../accommodations/shared/accommodation.service.mock';
+import {FooterComponent} from '../footer/footer.component';
+import {RatingComponent} from '../accommodations/sections/rating/rating.component';
+import {MapListComponent} from '../accommodations/map-list/map-list.component';
+import {MapDetailComponent} from '../accommodations/map-list/map-detail/map-detail.component';
 
 describe('MainPageComponent', () => {
   let component: MainPageComponent;
@@ -20,17 +22,20 @@ describe('MainPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainPageComponent, JumboSearchComponent, TopAccommodationListComponent, MapAccommodationListComponent,
-        FooterComponent, TopAccommodationComponent, MapAccommodationComponent, RatingComponent, AddressComponent, PriceComponent ],
-      imports: [
+      declarations: [
+        TopListComponent, TopDetailComponent, RatingComponent, PriceComponent, AddressComponent,
+        MapListComponent, MapDetailComponent, MainPageComponent
+      ],
+      imports: [ RouterTestingModule,
         AgmCoreModule.forRoot({
           apiKey: 'AIzaSyBEqwaI0P1yyWmIZ7a4vUPljajobeGc8z8'
-        })
-      ],
-      providers: [{
-        provide: AccommodationService,
-        useClass: AccommodationServiceMock
-      }]
+        })],
+      providers: [
+        {
+          provide: AccommodationService,
+          useClass: AccommodationServiceMock
+        }
+      ]
     })
     .compileComponents();
   }));

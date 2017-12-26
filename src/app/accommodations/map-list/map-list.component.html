@@ -1,0 +1,25 @@
+<div class="container map-list-container">
+  <div class="row">
+    <div class="col-sm map-list-title">
+      <h3>Best Brussels accommodations on the map</h3>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-sm-9">
+      <agm-map *ngIf="centralAccommodations" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+        <agm-marker *ngFor="let accommodation of centralAccommodations"
+                    [latitude]="accommodation.latitude" [longitude]="accommodation.longitude"
+                    [label]="accommodation.id">
+        </agm-marker>
+      </agm-map>
+    </div>
+
+    <div class="col-sm-3 map-detail-container">
+      <app-map-detail *ngFor="let accommodation of centralAccommodations" [accommodation]="accommodation">
+      </app-map-detail>
+    </div>
+
+  </div>
+
+</div>

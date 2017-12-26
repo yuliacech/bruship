@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarComponent } from './navbar.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {RouterTestingModule} from '@angular/router/testing';
 
 describe('NavbarComponent', () => {
@@ -11,7 +10,7 @@ describe('NavbarComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ NavbarComponent ],
-      imports: [RouterTestingModule,  NgbModule.forRoot()]
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   }));

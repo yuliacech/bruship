@@ -1,25 +1,95 @@
 @import "../../palette";
 
-.jumbotron-bg {
-  margin-top: 56px;
-  background: url("../../assets/img/atomium_1920.jpg");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
+.background-atomium {
+  background: url("../../assets/img/atomium_1920.jpg") no-repeat 50% 50%;
   background-size: cover;
-  text-align: center;
   height: 350px;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
+  margin-bottom: 2rem;
 }
 
-.layer {
+.background-layer {
   background-color: rgba(189, 189, 189, 0.6);
   height: 100%;
-  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.jumbotron-text {
+.middle {
   font-weight: 500;
+  text-align: center;
   color: @textPrimaryColor;
+}
+
+.middle-text  {
+  @media (min-width: 768px) {
+    font-size: 3.0rem;
+  }
+  @media (min-width: 992px) {
+    font-size: 3.5rem;
+  }
+}
+
+.middle-search {
+  width: 200px;
+  margin: auto;
+  @media (min-width: 576px) {
+    width: 250px;
+  }
+  @media (min-width: 768px) {
+    width: 300px;
+  }
+  @media (min-width: 992px) {
+    width: 400px;
+  }
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
+  border-color: @textPrimaryColor;
+  color: @textPrimaryColor;
+  background: transparent;
+}
+
+.middle-search:focus {
+  width: 250px;
+  @media (min-width: 576px) {
+    width: 350px;
+  }
+  @media (min-width: 768px) {
+    width: 500px;
+  }
+  @media (min-width: 992px) {
+    width: 700px;
+  }
+  border-color: @dividerColor;
+  color: @secondaryTextColor;
+  box-shadow: none;
+  background-color: @textPrimaryColor;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: @textPrimaryColor;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: @textPrimaryColor;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: @textPrimaryColor;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: @textPrimaryColor;
+}
+:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: @secondaryTextColor;
+}
+:focus::-moz-placeholder { /* Firefox 19+ */
+  color: @secondaryTextColor;
+}
+:focus:-ms-input-placeholder { /* IE 10+ */
+  color: @secondaryTextColor;
+}
+:focus:-moz-placeholder { /* Firefox 18- */
+  color: @secondaryTextColor;
 }
 

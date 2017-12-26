@@ -1,0 +1,13 @@
+<div class="container top-list-container">
+  <div class="row">
+    <div class="col-sm top-list-title">
+      <h3><span class="emoji">👍</span>Top rated accommodations in Brussels<span class="emoji">👍</span> </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let accommodation of topAccommodations">
+      <app-top-detail [accommodation]="accommodation"></app-top-detail>
+    </div>
+
+  </div>
+</div>

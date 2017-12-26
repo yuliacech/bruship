@@ -1,25 +1,35 @@
 @import "../../palette";
 
-nav {
-  background: @darkPrimaryColor;
-}
-
-.nav-link, .navbar-brand {
-  color: rgba(255, 255, 255, 0.87);
+.background-primary-color {
+  background-color: @primaryColor;
 }
 
 .navbar-brand {
   font-weight: 800;
 }
 
-.nav-item:hover {
-  background: @darkPrimaryColor;
-  border-radius: 2px;
+#navbar-toggle-cbox:checked ~ .collapse {
+  display:block;
 }
 
-.navbar-toggler:focus {
+#navbar-toggle-cbox:checked ~ .navbar-toggler-label {
   border-color: @accentColor;
-  outline: none;
+}
+
+#navbar-toggle-cbox {
+  display: none;
+}
+
+.navbar-toggler-label {
+  -webkit-appearance: none;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background: transparent;
+  border-radius: 0.25rem;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0;
 }
 
 .search-form {
@@ -32,6 +42,7 @@ nav {
 }
 
 .search-btn {
+  background: transparent;
   border-color: @accentColor;
   color: @accentColor;
   font-weight: 500;
@@ -41,3 +52,9 @@ nav {
   background-color: @accentColor;
   color: @darkPrimaryColor;
 }
+
+.search-btn:active {
+  background-color: @accentColor;
+  color: @darkPrimaryColor;
+}
+

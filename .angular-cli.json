@@ -17,10 +17,10 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "bs",
+      "prefix": "app",
       "styles": [
-        "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "styles.less",
+        "../node_modules/bootstrap/dist/css/bootstrap.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -56,7 +56,6 @@
   },
   "defaults": {
     "styleExt": "less",
-    "component": {
-    }
+    "component": {}
   }
 }
