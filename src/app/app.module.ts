@@ -18,6 +18,7 @@ import { PriceComponent } from './accommodations/sections/price/price.component'
 import { MapListComponent } from './accommodations/map-list/map-list.component';
 import { MapDetailComponent } from './accommodations/map-list/map-detail/map-detail.component';
 import { FooterComponent } from './footer/footer.component';
+import { HowtoListComponent } from './howto-list/howto-list.component';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
@@ -38,7 +39,8 @@ const BRUSHIP_ROUTES: Routes = [
     PriceComponent,
     MapListComponent,
     MapDetailComponent,
-    FooterComponent
+    FooterComponent,
+    HowtoListComponent
   ],
   imports: [
     BrowserModule,
