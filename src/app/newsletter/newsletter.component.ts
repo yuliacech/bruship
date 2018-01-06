@@ -13,6 +13,9 @@ export class NewsletterComponent implements OnInit {
   disableButton = false;
   response: string;
   constructor(private newsletterService: NewsletterService) {
+  }
+
+  ngOnInit() {
     this.form = new FormGroup({
       'email': new FormControl('', [
         Validators.required,
@@ -21,10 +24,9 @@ export class NewsletterComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
-
   isEmailValid(): boolean {
+    console.log('this.form.get(\'email\').errors');
+    console.log(this.form.get('email').errors);
     return this.form.get('email').errors == null;
   }
 
@@ -36,7 +38,6 @@ export class NewsletterComponent implements OnInit {
       this.disableButton = false;
       if (next['email'] && next['email'] === email) {
         this.response = 'success';
-
       } else {
         this.response = 'error';
       }
