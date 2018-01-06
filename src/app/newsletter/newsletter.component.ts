@@ -25,8 +25,8 @@ export class NewsletterComponent implements OnInit {
   }
 
   isEmailValid(): boolean {
-    console.log('this.form.get(\'email\').errors');
-    console.log(this.form.get('email').errors);
+    console.log('this.form');
+    console.log(this.form);
     return this.form.get('email').errors == null;
   }
 
