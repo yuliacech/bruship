@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "build:prod": "ng build --prod --output-path docs --base-href https://yulia-tue.github.io/bruship/",
+    "build:prod": "ng build --prod --output-path docs --base-href https://solid-flow.github.io/bruship/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

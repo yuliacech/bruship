@@ -19,6 +19,9 @@ import { MapListComponent } from './accommodations/map-list/map-list.component';
 import { MapDetailComponent } from './accommodations/map-list/map-detail/map-detail.component';
 import { FooterComponent } from './footer/footer.component';
 import { HowtoListComponent } from './howto-list/howto-list.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NewsletterService} from './newsletter/newsletter.service';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
@@ -40,7 +43,8 @@ const BRUSHIP_ROUTES: Routes = [
     MapListComponent,
     MapDetailComponent,
     FooterComponent,
-    HowtoListComponent
+    HowtoListComponent,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +52,11 @@ const BRUSHIP_ROUTES: Routes = [
     RouterModule.forRoot(BRUSHIP_ROUTES),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBEqwaI0P1yyWmIZ7a4vUPljajobeGc8z8'
-    })
+    }),
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [AccommodationService],
+  providers: [AccommodationService, NewsletterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

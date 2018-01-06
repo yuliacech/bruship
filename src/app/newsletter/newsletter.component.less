@@ -1,0 +1,52 @@
+@import "../../palette";
+
+.newsletter-btn {
+  text-transform: uppercase;
+  max-width: 110px;
+  background-color: @primaryColor;
+  color: @textPrimaryColor;
+}
+.newsletter-subtitle {
+  font-style: italic;
+}
+.email {
+  width: 200px;
+  @media (min-width: 576px) {
+    width: 250px;
+  }
+  @media (min-width: 768px) {
+    width: 300px;
+  }
+  @media (min-width: 992px) {
+    width: 400px;
+  }
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
+}
+.email:focus {
+  width: 250px;
+  @media (min-width: 576px) {
+    width: 350px;
+  }
+  @media (min-width: 768px) {
+    width: 400px;
+  }
+  @media (min-width: 992px) {
+    width: 600px;
+  }
+  box-shadow: none;
+  border-color: @primaryColor;
+  color: @primaryColor;
+}
+
+.email-error,
+.response-error {
+  color: @accentColor;
+  text-align: center;
+  margin: auto;
+}
+.response-success {
+  color: @primaryColor;
+  text-align: center;
+  margin: auto;
+}

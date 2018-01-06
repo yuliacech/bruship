@@ -1,0 +1,40 @@
+<div class="container container-margin" xmlns="http://www.w3.org/1999/html">
+  <div class="row">
+    <div class="col-sm container-title">
+      <h3><span class="emoji">✉</span> Join our newsletter <span class="emoji">✉</span></h3>
+      <h4>for tips on accommodation search in Brussels</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm container-title newsletter-subtitle">
+      Subscribe and get accommodation reviews delivered directly to your inbox!
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <form [formGroup]="form" (ngSubmit)="submitClicked()" class="">
+        <div class="form-row">
+        <div class="col-sm-8 d-flex justify-content-center justify-content-sm-end">
+        <label class="sr-only" for="email">Name</label>
+
+            <input type="email" formControlName="email" class="form-control mb-2 mr-sm-2 email" id="email" placeholder="Enter email"
+                   required>
+        </div>
+          <div class="col-sm-4 d-flex justify-content-center justify-content-sm-start">
+            <button [disabled]="disableButton || !isEmailValid()" type="submit" class="btn newsletter-btn mb-2">subscribe</button>
+          </div>
+          <span class="email-error" *ngIf="!isEmailValid() && !form.get('email').pristine && form.get('email').value">
+    Please enter the correct email, this email is not valid.
+          </span>
+
+          <span class="response-success" *ngIf="response==='success'">Thank you for joining our newsletter!
+          <span class="emoji"> 😊
+          </span></span>
+          <span class="response-error" *ngIf="response==='error'">Something went wrong
+          <span class="emoji"> 😟
+          </span> Please try again later.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
