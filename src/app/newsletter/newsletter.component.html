@@ -12,18 +12,19 @@
   </div>
   <div class="row">
     <div class="col-sm">
-      <form [formGroup]="form" class="">
+      <form>
         <div class="form-row">
           <div class="col-sm-8 d-flex justify-content-center justify-content-sm-end">
             <label class="sr-only" for="email">Name</label>
 
-            <input type="email" formControlName="email" class="form-control mb-2 mr-sm-2 email" id="email" placeholder="Enter email"
-                   required>
+            <input type="email" [formControl]="email" class="form-control mb-2 mr-sm-2 email" id="email"
+                   placeholder="Enter email" required>
           </div>
           <div class="col-sm-4 d-flex justify-content-center justify-content-sm-start">
-            <button (click)="submitClicked()" [disabled]="disableButton || !isEmailValid()" type="button" class="btn newsletter-btn mb-2">subscribe</button>
+            <button (click)="submitClicked()" [disabled]="disableButton || email.errors" type="button"
+                    class="btn newsletter-btn mb-2">subscribe</button>
           </div>
-          <span class="email-error" *ngIf="!isEmailValid() && !form.get('email').pristine && form.get('email').value">
+          <span class="email-error" *ngIf="email.errors && !email.pristine && email.value">
           Please enter the correct email, this email is not valid.
           </span>
 

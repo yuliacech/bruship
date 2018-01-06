@@ -9,31 +9,23 @@ import {NewsletterService} from './newsletter.service';
 })
 export class NewsletterComponent implements OnInit {
 
-  form: FormGroup;
+  email: FormControl;
   disableButton = false;
   response: string;
   constructor(private newsletterService: NewsletterService) {
   }
 
   ngOnInit() {
-    this.form = new FormGroup({
-      'email': new FormControl('', [
+      this.email = new FormControl('', [
         Validators.required,
         Validators.email
-      ])
-    });
-  }
-
-  isEmailValid(): boolean {
-    console.log('this.form');
-    console.log(this.form);
-    return this.form.get('email').errors == null;
+      ]);
   }
 
   submitClicked() {
     this.disableButton = true;
     this.response = null;
-    const email = this.form.getRawValue().email;
+    const email = this.email.value;
     this.newsletterService.addSubscriber(email).subscribe(next => {
       this.disableButton = false;
       if (next['email'] && next['email'] === email) {
