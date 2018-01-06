@@ -12,19 +12,19 @@
   </div>
   <div class="row">
     <div class="col-sm">
-      <form [formGroup]="form" (ngSubmit)="submitClicked()" class="">
+      <form [formGroup]="form" class="">
         <div class="form-row">
-        <div class="col-sm-8 d-flex justify-content-center justify-content-sm-end">
-        <label class="sr-only" for="email">Name</label>
+          <div class="col-sm-8 d-flex justify-content-center justify-content-sm-end">
+            <label class="sr-only" for="email">Name</label>
 
             <input type="email" formControlName="email" class="form-control mb-2 mr-sm-2 email" id="email" placeholder="Enter email"
                    required>
-        </div>
+          </div>
           <div class="col-sm-4 d-flex justify-content-center justify-content-sm-start">
-            <button [disabled]="disableButton || !isEmailValid()" type="submit" class="btn newsletter-btn mb-2">subscribe</button>
+            <button (click)="submitClicked()" [disabled]="disableButton || !isEmailValid()" type="button" class="btn newsletter-btn mb-2">subscribe</button>
           </div>
           <span class="email-error" *ngIf="!isEmailValid() && !form.get('email').pristine && form.get('email').value">
-    Please enter the correct email, this email is not valid.
+          Please enter the correct email, this email is not valid.
           </span>
 
           <span class="response-success" *ngIf="response==='success'">Thank you for joining our newsletter!

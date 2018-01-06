@@ -31,23 +31,20 @@ export class NewsletterComponent implements OnInit {
   submitClicked() {
     this.disableButton = true;
     this.response = null;
-    console.log('form ');
-    console.log(this.form);
     const email = this.form.getRawValue().email;
-   this.newsletterService.addSubscriber(email).subscribe(next => {
-     console.log(next);
-     this.disableButton = false;
-     if (next['email'] && next['email'] === email) {
-       this.response = 'success';
+    this.newsletterService.addSubscriber(email).subscribe(next => {
+      this.disableButton = false;
+      if (next['email'] && next['email'] === email) {
+        this.response = 'success';
 
-     } else {
-       this.response = 'error';
-     }
-   }, err => {
-     console.log(err);
-     this.disableButton = false;
-     this.response = 'error';
-   });
+      } else {
+        this.response = 'error';
+      }
+    }, err => {
+      console.error(err);
+      this.disableButton = false;
+      this.response = 'error';
+    });
   }
 
 }
