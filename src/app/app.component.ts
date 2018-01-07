@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
 import {environment} from '../environments/environment';
+import {AuthService} from './auth/auth.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  constructor(private router: Router) {
+  constructor(private router: Router, public auth: AuthService) {
     if (environment.production) {
       this.router.events.subscribe(event => {
         if (event instanceof NavigationEnd) {
@@ -15,6 +17,6 @@ export class AppComponent {
         }
       });
     }
-
+    auth.handleAuthentication();
   }
 }

@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "build:prod": "ng build --prod --output-path docs --base-href https://solid-flow.github.io/bruship/",
+    "build:github": "ng build --prod --output-path docs --base-href https://solid-flow.github.io/bruship/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -23,6 +23,7 @@
     "@angular/platform-browser": "5.1.3",
     "@angular/platform-browser-dynamic": "5.1.3",
     "@angular/router": "5.1.3",
+    "auth0-js": "9.0.2",
     "bootstrap": "4.0.0-beta.2",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.2",

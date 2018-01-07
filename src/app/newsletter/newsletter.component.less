@@ -5,7 +5,18 @@
   max-width: 110px;
   background-color: @primaryColor;
   color: @textPrimaryColor;
+  margin-top: 10px;
+  @media (min-width: 576px) {
+    margin: 0;
+
+  }
+  cursor: pointer;
 }
+
+.newsletter-btn:hover {
+  background-color: @darkPrimaryColor;
+}
+
 .newsletter-subtitle {
   font-style: italic;
 }
