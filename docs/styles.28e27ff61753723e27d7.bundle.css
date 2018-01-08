@@ -4,7 +4,7 @@
   /* Support for all WebKit browsers. */-webkit-font-smoothing:antialiased;
   /* Support for Safari and Chrome. */text-rendering:optimizeLegibility;
   /* Support for Firefox. */-moz-osx-font-smoothing:grayscale;
-  /* Support for IE. */-webkit-font-feature-settings:"liga";font-feature-settings:"liga"}.emoji{text-decoration:none;color:#ccc;font-family:Noto Color Emoji,Apple Color Emoji,Segoe UI Emoji,Times,Symbola,Aegyptus,Code2000,Code2001,Code2002,Musica,serif}.container-title{text-align:center;margin-bottom:10px;color:#757575}.container-margin{margin-bottom:2rem}/*!
+  /* Support for IE. */-webkit-font-feature-settings:"liga";font-feature-settings:"liga"}.emoji{text-decoration:none;color:#ccc;font-family:Noto Color Emoji,Apple Color Emoji,Segoe UI Emoji,Times,Symbola,Aegyptus,Code2000,Code2001,Code2002,Musica,serif}.container-title{text-align:center;margin-bottom:10px;color:#757575}.container-margin{margin-bottom:2rem}.login-btn-label{margin:0 auto;left:-12px}.login-button{background-color:#512da8;text-transform:uppercase;color:#fff;display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer}.icon-flipped{transform:scaleX(-1);-moz-transform:scaleX(-1);-webkit-transform:scaleX(-1);-ms-transform:scaleX(-1)}/*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.

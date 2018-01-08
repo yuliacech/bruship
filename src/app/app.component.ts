@@ -9,7 +9,7 @@ import {AuthService} from './auth/auth.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  constructor(private router: Router, public auth: AuthService) {
+  constructor(private router: Router, private auth: AuthService) {
     if (environment.production) {
       this.router.events.subscribe(event => {
         if (event instanceof NavigationEnd) {

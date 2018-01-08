@@ -9,9 +9,15 @@
 
     <div class="col-sm-4">
 
-      <div role="button" class="btn-block btn login-button" (click)="login()">
-        <i class="material-icons">perm_identity</i>
-        <span class="login-btn-label">LOGIN</span></div>
+      <div role="button" class="login-button btn-block btn" (click)="login()" *ngIf="!authService.isAuthenticated()">
+        <i class="material-icons">person_outline</i>
+        <span class="login-btn-label">login</span>
+      </div>
+
+      <div role="button" class="login-button btn-block btn " (click)="router.navigate(['/account'])" *ngIf="authService.isAuthenticated()">
+        <i class="material-icons ">exit_to_app</i>
+        <span class="login-btn-label">To your account</span>
+      </div>
     </div>
   </div>
 

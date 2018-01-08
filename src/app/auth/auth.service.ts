@@ -13,10 +13,11 @@ export class AuthService {
     responseType: 'token id_token',
     audience: 'https://solid-flow.eu.auth0.com/userinfo',
     redirectUri: environment.originUrl + '/callback',
-    scope: 'openid'
+    scope: 'openid profile'
   });
 
-  constructor(public router: Router) {}
+  userProfile: any;
+  constructor(private router: Router) {}
 
   public login(): void {
     this.auth0.authorize();
@@ -56,6 +57,21 @@ export class AuthService {
     // access token's expiry time
     const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
+  }
+
+  public getProfile(cb): void {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('Access token must exist to fetch profile');
+    }
+
+    const self = this;
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if (profile) {
+        self.userProfile = profile;
+      }
+      cb(err, profile);
+    });
   }
 
 }

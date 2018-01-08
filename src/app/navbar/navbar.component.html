@@ -11,13 +11,31 @@
         <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
           Home</a>
         <!-- TODO accessability <span class="sr-only">(current)</span> -->
-      </li><li class="nav-item">
+      </li>
+      <li class="nav-item">
         <a class="nav-link" routerLink="/contact_us" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
           Contact us</a>
         <!-- TODO accessability <span class="sr-only">(current)</span> -->
       </li>
 
+      <li class="nav-item" *ngIf="authService.isAuthenticated()">
+        <a class="nav-link" routerLink="/account" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+          My account</a>
+        <!-- TODO accessability <span class="sr-only">(current)</span> -->
+      </li>
+
     </ul>
+
+    <div role="button" class="btn login-button mr-sm-2" (click)="authService.login()" *ngIf="!authService.isAuthenticated()">
+      <i class="material-icons">person_outline</i>
+      <span class="login-btn-label">login</span>
+    </div>
+
+    <div role="button" class="btn login-button mr-sm-2" (click)="authService.logout()" *ngIf="authService.isAuthenticated()">
+      <i class="material-icons icon-flipped">exit_to_app</i>
+      <span class="login-btn-label">logout</span>
+    </div>
+
     <form class="form-inline my-2 my-lg-0">
       <input class="search-form form-control mr-sm-2" type="search" placeholder="Type an address..." aria-label="Search">
       <button class="search-btn btn my-2 my-sm-0" type="submit">Search</button>
