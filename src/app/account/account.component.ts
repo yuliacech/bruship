@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../auth/auth.service';
+import {AccountService} from './account.service';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-account',
@@ -10,7 +12,7 @@ export class AccountComponent implements OnInit {
 
   profile: any;
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, public accountService: AccountService) { }
 
   ngOnInit() {
     if (this.auth.userProfile) {
@@ -18,9 +20,12 @@ export class AccountComponent implements OnInit {
     } else {
       this.auth.getProfile((err, profile) => {
         this.profile = profile;
-        console.log(profile);
       });
     }
   }
 
+  getReviews() {
+    this.accountService.getReviews()
+      .subscribe(data => console.log, error => console.log);
+  }
 }

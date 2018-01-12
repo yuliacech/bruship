@@ -7,5 +7,6 @@ export const environment = {
   production: false,
   baseApiUrl: 'http://localhost:8080',
   trackingID: '',
-  originUrl: 'http://localhost:4200'
+  originUrl: 'http://localhost:4200',
+  auth0ID: 'oAxeiYUNgrbz3Q81IES8XWZZ60t_Eqi6'
 };

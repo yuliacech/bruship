@@ -8,6 +8,9 @@
         <li>
           <a class="footer-link" routerLink="/contact_us">Contact us</a>
         </li>
+        <li *ngIf="authService.isAuthenticated()">
+          <a class="footer-link" routerLink="/account">My account</a>
+        </li>
       </ul>
 
     </div>
@@ -30,16 +33,16 @@
 
         <div class="d-sm-flex flex-row justify-content-sm-center">
           <div class="p-2">
-            <a href="https://www.mongodb.com/"><img src="assets/img/MongoDB-Logo.svg"></a>
+            <a href="https://www.mongodb.com/"><img src="assets/img/MongoDB.png"></a>
           </div>
           <div class="p-2">
             <a href="http://expressjs.com/"><img src="assets/img/Expressjs.png"></a>
           </div>
           <div class="p-2">
-            <a href="https://angular.io/"><img src="assets/img/Angular_full_color_logo.svg"></a>
+            <a href="https://angular.io/"><img src="assets/img/Angular.png"></a>
           </div>
           <div class="p-2">
-            <a href="https://nodejs.org/"><img src="assets/img/Node.js_logo.svg"></a>
+            <a href="https://nodejs.org/"><img src="assets/img/Nodejs.png"></a>
           </div>
         </div>
       </div>

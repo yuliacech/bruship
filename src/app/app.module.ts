@@ -25,6 +25,7 @@ import {NewsletterService} from './newsletter/newsletter.service';
 import {LoginComponent} from './login/login.component';
 import {AuthService} from './auth/auth.service';
 import {AccountComponent} from './account/account.component';
+import {AccountService} from './account/account.service';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
@@ -62,7 +63,7 @@ const BRUSHIP_ROUTES: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AccommodationService, NewsletterService, AuthService],
+  providers: [AccommodationService, NewsletterService, AuthService, AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

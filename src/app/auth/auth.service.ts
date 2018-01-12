@@ -2,18 +2,18 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import 'rxjs/add/operator/filter';
 import * as auth0 from 'auth0-js';
-import {environment} from '../../environments/environment';
+import {environment} from '@env/environment';
 
 @Injectable()
 export class AuthService {
 
   auth0 = new auth0.WebAuth({
-    clientID: 'oAxeiYUNgrbz3Q81IES8XWZZ60t_Eqi6',
+    clientID: environment.auth0ID,
     domain: 'solid-flow.eu.auth0.com',
     responseType: 'token id_token',
-    audience: 'https://solid-flow.eu.auth0.com/userinfo',
+    audience: 'bruship-server/api',
     redirectUri: environment.originUrl + '/callback',
-    scope: 'openid profile'
+    scope: 'openid profile read:reviews'
   });
 
   userProfile: any;
