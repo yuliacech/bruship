@@ -6,9 +6,11 @@ export class Accommodation {
   id: string;
   name: string;
   coverPhoto: string;
-  rating: AverageRating;
-  latitude: number;
-  longitude: number;
+  averageRating: AverageRating;
+  location: {
+    latitude: number;
+    longitude: number;
+  };
   address: Address;
-  price: AveragePrice;
+  averagePrice: AveragePrice;
 }
