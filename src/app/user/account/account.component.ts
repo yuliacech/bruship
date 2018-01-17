@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../auth/auth.service';
+import {AuthService} from '@app/shared/auth/auth.service';
 import {AccountService} from './account.service';
 import 'rxjs/add/operator/map';
 

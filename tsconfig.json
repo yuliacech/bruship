@@ -18,8 +18,7 @@
     "baseUrl": "src",
     "paths": {
       "@app/*": ["app/*"],
-      "@env/*": ["environments/*"],
-      "@palette": ["palette.less"]
+      "@env/*": ["environments/*"]
     }
   }
 }

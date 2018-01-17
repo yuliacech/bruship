@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
-import {MainPageComponent} from './main-page/main-page.component';
+import {MainPageComponent} from './home/main-page/main-page.component';
 import {FooterComponent} from './footer/footer.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {TopListComponent} from './accommodations/top-list/top-list.component';

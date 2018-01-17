@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
-import {environment} from '../environments/environment';
-import {AuthService} from './auth/auth.service';
+import {environment} from '@env/environment';
+import {AuthService} from './shared/auth/auth.service';
 
 @Component({
   selector: 'app-root',

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {environment} from '@env/environment';
+import {environment} from 'environments/environment';
 
 @Injectable()
 export class AccountService {
@@ -13,7 +13,6 @@ export class AccountService {
   }
 
   submitReview(review: any) {
-    const headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('access_token')});
     return this.httpClient.post<any[]>(environment.baseApiUrl + '/api/user/reviews',
       review, {
         headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('access_token')),

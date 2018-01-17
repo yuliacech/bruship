@@ -1,0 +1,46 @@
+<div class="container-fluid grey-backgrond">
+
+  <div class="container account-container">
+
+    <div class="row">
+      <div class="col-sm-6 panel-container">
+        <div class="panel">
+          <div class="row">
+            <div class="col-sm-4 text-center">
+              <img src="{{profile?.picture}}" class="rounded avatar" alt="avatar">
+            </div>
+            <div class="col-sm-8 text-center">
+              <div class="panel-title">
+                <h3>Hello, {{profile?.given_name}}</h3>
+              </div>
+              <button class="btn toggle-form-btn" [ngClass]="{'toggled': !hideReviewForm}" (click)="toggleHideReviewForm()">Add new review</button>
+
+              <button class="btn toggle-form-btn" (click)="authService.logout()">LOGOUT</button>
+            </div>
+          </div>
+
+
+          <app-review-form [hidden]="hideReviewForm" (reviewAdded)="getReviews()">
+
+          </app-review-form>
+          <div>
+
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col-sm-6 panel-container">
+        <div class="panel">
+          <div class="panel-title reviews-title">
+            <h3>My reviews</h3>
+          </div>
+          <app-review-list [reviews]="reviews">
+
+          </app-review-list>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

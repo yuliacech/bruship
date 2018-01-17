@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AccountService} from '@app/account/account.service';
+import {AccountService} from 'app/user/account/account.service';
 import {} from '@types/googlemaps';
 import PlaceResult = google.maps.places.PlaceResult;
 

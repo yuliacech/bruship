@@ -7,7 +7,7 @@
   <div class="card-img-top">
     <img *ngIf="review.coverPhoto; else defaultCoverPhoto" src="{{review?.coverPhoto}}" alt="review cover photo">
     <ng-template #defaultCoverPhoto>
-      <img src="assets/img/no_img.png" alt="no cover photo">
+      <img src="../../../../assets/img/no_img.png" alt="no cover photo">
     </ng-template>
   </div>
   <div class="card-body">

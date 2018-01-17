@@ -7,7 +7,7 @@ import {AgmCoreModule} from '@agm/core';
 
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
-import {MainPageComponent} from './main-page/main-page.component';
+import {MainPageComponent} from './home/main-page/main-page.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {TopListComponent} from './accommodations/top-list/top-list.component';
 import {TopDetailComponent} from './accommodations/top-list/top-detail/top-detail.component';
@@ -18,18 +18,18 @@ import {PriceComponent} from './accommodations/sections/price/price.component';
 import {MapListComponent} from './accommodations/map-list/map-list.component';
 import {MapDetailComponent} from './accommodations/map-list/map-detail/map-detail.component';
 import {FooterComponent} from './footer/footer.component';
-import {HowtoListComponent} from './howto-list/howto-list.component';
-import {NewsletterComponent} from './newsletter/newsletter.component';
+import {HowtoListComponent} from './home/howto-list/howto-list.component';
+import {NewsletterComponent} from './home/newsletter/newsletter.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {NewsletterService} from './newsletter/newsletter.service';
-import {LoginComponent} from './login/login.component';
-import {AuthService} from './auth/auth.service';
-import {AccountComponent} from './account/account.component';
-import {AccountService} from './account/account.service';
-import {ReviewListComponent} from './review-list/review-list.component';
-import {ReviewDetailComponent} from './review-list/review-detail/review-detail.component';
-import {ReviewFormComponent} from './review-form/review-form.component';
-import {GooglePlacesAutocompleteDirective} from './google-places-autocomplete/google-places-autocomplete.directive';
+import {NewsletterService} from './home/newsletter/newsletter.service';
+import {LoginComponent} from './home/login/login.component';
+import {AuthService} from './shared/auth/auth.service';
+import {AccountComponent} from './user/account/account.component';
+import {AccountService} from './user/account/account.service';
+import {ReviewListComponent} from './user/review-list/review-list.component';
+import {ReviewDetailComponent} from './user/review-list/review-detail/review-detail.component';
+import {ReviewFormComponent} from './user/review-form/review-form.component';
+import {GooglePlacesAutocompleteDirective} from './shared/google-places-autocomplete/google-places-autocomplete.directive';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
