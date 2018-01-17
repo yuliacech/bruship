@@ -1,5 +1,6 @@
 import {Directive, ElementRef, EventEmitter, OnInit, Output} from '@angular/core';
 import {MapsAPILoader} from '@agm/core';
+import {} from '@types/googlemaps';
 
 @Directive({
   selector: '[appGooglePlacesAutocomplete]'
