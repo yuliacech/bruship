@@ -1,20 +1,24 @@
 <div>
-  {{accommodation?.id}}. {{accommodation?.name}}
+
 </div>
 
 <div class="card-container">
   <div>
-    <img src="{{accommodation?.coverPhoto}}" alt="accommodation cover photo">
+    <img *ngIf="accommodation.coverPhoto; else defaultCoverPhoto" src="{{accommodation?.coverPhoto}}"
+         alt="accommodation cover photo">
+    <ng-template #defaultCoverPhoto>
+      <img src="assets/img/no_img.png" alt="no cover photo">
+    </ng-template>
   </div>
   <div class="bottom-container">
     <div>
       <app-address [address]="accommodation?.address"></app-address>
     </div>
     <div>
-      <app-rating [rating]="accommodation?.rating"></app-rating>
+      <app-rating [rating]="accommodation?.averageRating?.rating"></app-rating>
     </div>
     <div>
-      <app-price [price]="accommodation?.price"></app-price>
+      <app-price [price]="accommodation?.averagePrice?.price"></app-price>
     </div>
   </div>
 </div>

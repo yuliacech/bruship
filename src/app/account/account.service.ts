@@ -9,7 +9,15 @@ export class AccountService {
 
   getReviews() {
     const headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('access_token')});
-    return this.httpClient.get(environment.baseApiUrl + '/api/user/reviews', {headers: headers});
+    return this.httpClient.get<any[]>(environment.baseApiUrl + '/api/user/reviews', {headers: headers});
+  }
+
+  submitReview(review: any) {
+    const headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('access_token')});
+    return this.httpClient.post<any[]>(environment.baseApiUrl + '/api/user/reviews',
+      review, {
+        headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('access_token')),
+      });
   }
 
 

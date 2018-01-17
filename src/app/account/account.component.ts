@@ -11,21 +11,30 @@ import 'rxjs/add/operator/map';
 export class AccountComponent implements OnInit {
 
   profile: any;
-
+  reviews: any[];
+  hideReviewForm = true;
   constructor(public auth: AuthService, public accountService: AccountService) { }
 
   ngOnInit() {
     if (this.auth.userProfile) {
       this.profile = this.auth.userProfile;
+      this.getReviews();
     } else {
       this.auth.getProfile((err, profile) => {
         this.profile = profile;
+        this.getReviews();
       });
     }
   }
 
   getReviews() {
     this.accountService.getReviews()
-      .subscribe(data => console.log, error => console.log);
+      .subscribe(data =>  {
+        this.reviews = data;
+      }, error => console.log);
+  }
+
+  toggleHideReviewForm() {
+    this.hideReviewForm = !this.hideReviewForm;
   }
 }

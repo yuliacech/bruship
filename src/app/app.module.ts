@@ -26,6 +26,10 @@ import {LoginComponent} from './login/login.component';
 import {AuthService} from './auth/auth.service';
 import {AccountComponent} from './account/account.component';
 import {AccountService} from './account/account.service';
+import {ReviewListComponent} from './review-list/review-list.component';
+import {ReviewDetailComponent} from './review-list/review-detail/review-detail.component';
+import {ReviewFormComponent} from './review-form/review-form.component';
+import {GooglePlacesAutocompleteDirective} from './google-places-autocomplete/google-places-autocomplete.directive';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
@@ -51,14 +55,19 @@ const BRUSHIP_ROUTES: Routes = [
     HowtoListComponent,
     NewsletterComponent,
     LoginComponent,
-    AccountComponent
+    AccountComponent,
+    ReviewListComponent,
+    ReviewDetailComponent,
+    ReviewFormComponent,
+    GooglePlacesAutocompleteDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(BRUSHIP_ROUTES),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBEqwaI0P1yyWmIZ7a4vUPljajobeGc8z8'
+      apiKey: 'AIzaSyBEqwaI0P1yyWmIZ7a4vUPljajobeGc8z8',
+      libraries: ['places', 'geometry']
     }),
     FormsModule,
     ReactiveFormsModule

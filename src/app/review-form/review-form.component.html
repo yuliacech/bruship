@@ -1,0 +1,95 @@
+<div class="row form-container" [ngClass]="{'d-none': hidden}">
+  <div>
+    Tell us about your experience in Brussels
+  </div>
+  <form [formGroup]="form">
+
+    <div class="form-group">
+      <label for="inputLocation">Accommodation location</label>
+      <input appGooglePlacesAutocomplete (placeSelected)="fillAddress($event)" type="text" class="form-control"
+             id="inputLocation" placeholder="Where did you stay?">
+    </div>
+    <div formGroupName="address">
+
+      <div class="form-row">
+        <div class="form-group col-sm-8">
+          <input type="text" class="form-control form-control-sm" formControlName="streetName" id="streetName"
+                 placeholder="Street name" required>
+        </div>
+        <div class="form-group col-sm-4">
+          <input type="text" class="form-control form-control-sm" formControlName="houseNumber" id="houseNumber"
+                 placeholder="House no." required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-sm-4">
+          <input type="text" class="form-control form-control-sm" formControlName="postalCode" id="postalCode"
+                 placeholder="Postal code" required>
+        </div>
+        <div class="form-group col-sm-8">
+          <input type="text" class="form-control form-control-sm" formControlName="city" id="city"
+                 placeholder="City" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control form-control-sm" formControlName="country" id="country"
+               placeholder="Country" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="rating">Your rating</label>
+      <input #rating type="range" min="1" max="5" class="form-control" formControlName="rating" id="rating"
+             placeholder="Type a number from 1 to 5">
+      <small id="rangeHelp" class="form-text text-muted">{{rating.value}} from 5 stars</small>
+
+    </div>
+    <div class="form-group">
+      <label for="review">Please let us know, what did you like/not like about the accommodation?</label>
+      <textarea maxlength="2000" class="form-control" formControlName="review" id="review"
+                placeholder="Max 2000 characters">
+          </textarea>
+    </div>
+
+    <div formGroupName="duration">
+      <div class="">
+        <label for="durationAmount">How long did you stay here?</label>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-sm-4">
+
+          <input type="number" min="1" class="form-control form-control-sm" formControlName="amount" id="durationAmount"
+                 placeholder="Type a duration">
+        </div>
+        <div class="form-group col-sm-8">
+          <select class="form-control form-control-sm" formControlName="unit" id="unit">
+            <option [selected]="true" value="month">month(s)</option>
+            <option value="day">day(s)</option>
+            <option value="year">year(s)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div formGroupName="price">
+      <div class="">
+        <label for="priceAmount">What was the price of the accommodation?</label>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-sm-4">
+
+          <input type="number" min="1" class="form-control form-control-sm" formControlName="amount"
+                 id="priceAmount" placeholder="Type a price">
+        </div>
+        <div class="form-group col-sm-8">
+          <select class="form-control form-control-sm" formControlName="period" id="period">
+            <option [selected]="true" value="month">per month</option>
+            <option value="week">per week</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+    <button [disabled]="form.invalid || submitDisabled" (click)="submitReview()" class="btn">Submit</button>
+
+  </form>
+</div>

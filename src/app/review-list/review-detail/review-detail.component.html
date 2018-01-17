@@ -1,0 +1,40 @@
+
+<div class="card">
+  <div class="card-header text-muted">
+    reviewed on {{review?.timestamp | date }}
+  </div>
+
+  <div class="card-img-top">
+    <img *ngIf="review.coverPhoto; else defaultCoverPhoto" src="{{review?.coverPhoto}}" alt="review cover photo">
+    <ng-template #defaultCoverPhoto>
+      <img src="assets/img/no_img.png" alt="no cover photo">
+    </ng-template>
+  </div>
+  <div class="card-body">
+    <div class="card-title clearfix">
+
+      <div class="float-left">
+        <app-rating [rating]="review?.rating"></app-rating>
+      </div>
+      <div class="float-right" *ngIf="review.duration">
+        stayed {{review?.duration?.amount}} {{review?.duration?.unit}}
+      </div>
+
+    </div>
+    <div class="card-text">
+      <div class="float-left">
+        <app-address [address]="review?.address"></app-address>
+      </div>
+      <div class="float-right">
+        <app-price [price]="review?.price?.amount"></app-price>
+      </div>
+    </div>
+
+  </div>
+  <hr>
+  <div class="card-body">
+    {{review?.review}}
+  </div>
+</div>
+
+

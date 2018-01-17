@@ -9,7 +9,7 @@
     <div class="col-sm-9">
       <agm-map *ngIf="centralAccommodations" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
         <agm-marker *ngFor="let accommodation of centralAccommodations"
-                    [latitude]="accommodation.latitude" [longitude]="accommodation.longitude"
+                    [latitude]="accommodation?.location?.latitude" [longitude]="accommodation?.location?.longitude"
                     [label]="accommodation.id">
         </agm-marker>
       </agm-map>

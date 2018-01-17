@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Accommodation} from '../shared/accommodation.model';
 import {AccommodationService} from '../shared/accommodation.service';
 
-const MAX_TOP_ACCOMMODATIONS_NUMBER = 3;
+const MAX_TOP_ACCOMMODATIONS_NUMBER = 9;
 
 @Component({
   selector: 'app-top-list',
