@@ -11,7 +11,10 @@
             </div>
             <div class="col-sm-8 text-center">
               <div class="panel-title">
-                <h3>Hello, {{profile?.given_name}}</h3>
+                <h3 *ngIf="profile.given_name; else defaultGreeting">Hello, {{profile?.given_name}}</h3>
+                <ng-template #defaultGreeting>
+                  <h3>Hello, user</h3>
+                </ng-template>
               </div>
               <button class="btn toggle-form-btn" [ngClass]="{'toggled': !hideReviewForm}" (click)="toggleHideReviewForm()">Add new review</button>
 
