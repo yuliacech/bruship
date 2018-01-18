@@ -2,4 +2,18 @@
 
 i {
   color: @accentColor;
+  pointer-events: none;
+}
+
+.editable {
+  pointer-events: auto;
+  cursor: pointer;
+}
+.grow {
+  transform: scale(2);
+  transition: all .2s ease-in-out;
+  margin: 10px;
+}
+.grow:hover {
+  transform: scale(2.3);
 }

@@ -1,1 +1,2 @@
-<i *ngFor="let starIcon of starIcons" class="material-icons">{{starIcon}}</i>
+<i [ngClass]="{'editable grow': editable}" (click)="onClick(i)" *ngFor="let starIcon of starIcons; let i = index"
+   class="material-icons">{{starIcon}}</i>

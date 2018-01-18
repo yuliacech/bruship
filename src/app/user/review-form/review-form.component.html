@@ -6,47 +6,48 @@
   <form [formGroup]="form">
 
     <div class="form-group">
-      <label for="inputLocation">Accommodation location</label>
+      <label for="inputLocation">Accommodation location*</label>
       <input appGooglePlacesAutocomplete (placeSelected)="fillAddress($event)" type="text" class="form-control"
-             id="inputLocation" placeholder="Where did you stay?">
+             id="inputLocation" placeholder="Type an address">
     </div>
-    <div formGroupName="address">
+    <div formGroupName="address" [ngClass]="{'d-none': hideAddress}">
 
       <div class="form-row">
         <div class="form-group col-sm-8">
           <input type="text" class="form-control form-control-sm" formControlName="streetName" id="streetName"
-                 placeholder="Street name" required>
+                 placeholder="Street name*" required>
         </div>
         <div class="form-group col-sm-4">
           <input type="text" class="form-control form-control-sm" formControlName="houseNumber" id="houseNumber"
-                 placeholder="House no." required>
+                 placeholder="House no.*" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-sm-4">
           <input type="text" class="form-control form-control-sm" formControlName="postalCode" id="postalCode"
-                 placeholder="Postal code" required>
+                 placeholder="Postal code*" required>
         </div>
         <div class="form-group col-sm-8">
           <input type="text" class="form-control form-control-sm" formControlName="city" id="city"
-                 placeholder="City" required>
+                 placeholder="City*" required>
         </div>
       </div>
       <div class="form-group">
         <input type="text" class="form-control form-control-sm" formControlName="country" id="country"
-               placeholder="Country" required>
+               placeholder="Country*" required>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="rating">Your rating</label>
-      <input #rating type="range" min="1" max="5" class="form-control" formControlName="rating" id="rating"
-             placeholder="Type a number from 1 to 5">
-      <small id="rangeHelp" class="form-text text-muted">{{rating.value}} from 5 stars</small>
+      <label for="rating">Your rating*</label>
+      <div>
+        <app-rating id="rating" [rating]="form.get('rating').value" [editable]="true"
+                    (ratingChanged)="onRatingChange($event)"></app-rating>
+      </div>
 
     </div>
     <div class="form-group">
-      <label for="review">Please let us know, what did you like/not like about the accommodation?</label>
+      <label for="review">Please let us know, what you liked and not liked about the accommodation?</label>
       <textarea maxlength="2000" class="form-control" formControlName="review" id="review"
                 placeholder="Max 2000 characters">
           </textarea>
@@ -90,7 +91,12 @@
       </div>
 
     </div>
-    <button [disabled]="form.invalid || submitDisabled" (click)="submitReview()" class="btn">Submit</button>
-
+    <button [disabled]="form.invalid || submitDisabled" (click)="submitReview()" class="btn submit-btn"
+            [ngClass]="{'loading': submitDisabled}">Submit</button>
+    <div class="form-status">
+      <small *ngIf="!form.pristine && form.invalid">Please provide full address and rating</small>
+      <small *ngIf="reviewCreated">Thank you for reviewing this accommodation!</small>
+      <small *ngIf="reviewFailed">There was an error while submitting your review. Please try again later!</small>
+    </div>
   </form>
 </div>

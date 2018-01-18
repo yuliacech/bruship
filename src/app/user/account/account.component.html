@@ -7,18 +7,21 @@
         <div class="panel">
           <div class="row">
             <div class="col-sm-4 text-center">
-              <img src="{{profile?.picture}}" class="rounded avatar" alt="avatar">
+              <img *ngIf="profile && profile.picture; else defaultPicture" src="{{profile?.picture}}" class="rounded avatar" alt="avatar">
+              <ng-template #defaultPicture>
+                <img src="assets/img/no_avatar.png" class="rounded avatar" alt="default avatar">
+              </ng-template>
             </div>
             <div class="col-sm-8 text-center">
               <div class="panel-title">
-                <h3 *ngIf="profile.given_name; else defaultGreeting">Hello, {{profile?.given_name}}</h3>
+                <h3 *ngIf="profile && profile.given_name; else defaultGreeting">Hello, {{profile?.given_name}}</h3>
                 <ng-template #defaultGreeting>
                   <h3>Hello, user</h3>
                 </ng-template>
               </div>
               <button class="btn toggle-form-btn" [ngClass]="{'toggled': !hideReviewForm}" (click)="toggleHideReviewForm()">Add new review</button>
 
-              <button class="btn toggle-form-btn" (click)="authService.logout()">LOGOUT</button>
+              <button class="btn toggle-form-btn" (click)="auth.logout()">LOGOUT</button>
             </div>
           </div>
 

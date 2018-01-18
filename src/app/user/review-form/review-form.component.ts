@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AccountService} from 'app/user/account/account.service';
 import {} from '@types/googlemaps';
@@ -14,8 +14,12 @@ export class ReviewFormComponent implements OnInit {
   @Input() hidden: boolean;
   form: FormGroup;
   submitDisabled = false;
+  hideAddress = true;
+  reviewCreated = false;
+  reviewFailed = false;
   @Output() reviewAdded = new EventEmitter();
-  constructor(private formBuilder: FormBuilder, private accountService: AccountService) { }
+  constructor(private formBuilder: FormBuilder, private accountService: AccountService,
+              private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -43,33 +47,30 @@ export class ReviewFormComponent implements OnInit {
   }
 
   fillAddress(place: PlaceResult) {
-    console.log(place);
+    this.hideAddress = false;
+    this.form.get('address').markAsDirty();
+    this.changeDetector.detectChanges();
     place.address_components.forEach(addressComponent => {
       addressComponent.types.forEach(addressType => {
         switch (addressType) {
           case 'route': {
-            console.log('route');
-            this.form.controls.address.patchValue({streetName: addressComponent.long_name});
+            this.form.get('address').patchValue({streetName: addressComponent.long_name});
             break;
           }
           case 'street_number': {
-            console.log('street_number');
-            this.form.controls.address.patchValue({houseNumber: addressComponent.long_name});
+            this.form.get('address').patchValue({houseNumber: addressComponent.long_name});
             break;
           }
           case 'locality': {
-            console.log('locality');
-            this.form.controls.address.patchValue({city: addressComponent.long_name});
+            this.form.get('address').patchValue({city: addressComponent.long_name});
             break;
           }
           case 'postal_code': {
-            console.log('postal_code');
-            this.form.controls.address.patchValue({postalCode: addressComponent.long_name});
+            this.form.get('address').patchValue({postalCode: addressComponent.long_name});
             break;
           }
           case 'country': {
-            console.log('country');
-            this.form.controls.address.patchValue({country: addressComponent.long_name});
+            this.form.get('address').patchValue({country: addressComponent.long_name});
             break;
           }
           default: {
@@ -85,14 +86,23 @@ export class ReviewFormComponent implements OnInit {
   submitReview() {
     console.log(this.form.getRawValue());
     this.submitDisabled = true;
+    this.reviewCreated = false;
+    this.reviewFailed = false;
     this.accountService.submitReview(this.form.getRawValue()).subscribe(data => {
       this.form.reset();
       this.submitDisabled = false;
       this.reviewAdded.emit();
+      this.reviewCreated = true;
       console.log(data);
     }, error => {
+      this.reviewFailed = true;
       console.log(error);
     });
+  }
+
+  onRatingChange(rating: number) {
+    this.form.get('rating').markAsDirty();
+    this.form.patchValue({rating: rating});
   }
 
 }

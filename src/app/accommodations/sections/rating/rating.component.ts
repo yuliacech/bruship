@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 
 const MAX_RATING = 5;
 
@@ -9,6 +9,8 @@ const MAX_RATING = 5;
 })
 export class RatingComponent implements OnInit, OnChanges {
   @Input() rating: number;
+  @Input() editable: boolean;
+  @Output() ratingChanged = new EventEmitter();
   starIcons: string[];
   constructor() { }
 
@@ -44,6 +46,10 @@ export class RatingComponent implements OnInit, OnChanges {
     } else {
       return 'star_border';
     }
+  }
+
+  onClick(index: number) {
+    this.ratingChanged.emit(index + 1);
   }
 
 }
