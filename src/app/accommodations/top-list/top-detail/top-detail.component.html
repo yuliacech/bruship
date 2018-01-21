@@ -1,6 +1,7 @@
 <div class="card">
   <div class="card-img-top">
-    <img *ngIf="accommodation.coverPhoto; else defaultCoverPhoto" src="{{accommodation?.coverPhoto}}" alt="accommodation cover photo">
+    <img *ngIf="accommodation.photos && accommodation.photos.length > 0; else defaultCoverPhoto"
+         src="{{accommodation?.photos[0]}}" alt="accommodation cover photo">
     <ng-template #defaultCoverPhoto>
       <img src="assets/img/no_img.png" alt="no cover photo">
     </ng-template>
@@ -9,10 +10,10 @@
     <div class="card-title clearfix top-accommodation-title">
 
       <div class="float-left">
-        <app-rating [rating]="accommodation?.averageRating?.rating"></app-rating>
+        <app-rating [rating]="accommodation?.rating"></app-rating>
       </div>
       <div class="float-right">
-        <app-price [price]="accommodation?.averagePrice?.price"></app-price>
+        <app-price [price]="accommodation?.price"></app-price>
       </div>
     </div>
     <div class="card-text">

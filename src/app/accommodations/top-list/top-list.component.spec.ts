@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopListComponent } from './top-list.component';
-import {PriceComponent} from '../sections/price/price.component';
+import {PriceComponent} from '../../shared/price/price.component';
 import {TopDetailComponent} from './top-detail/top-detail.component';
-import {AddressComponent} from '../sections/address/address.component';
-import {RatingComponent} from '../sections/rating/rating.component';
+import {AddressComponent} from '../../shared/address/address.component';
+import {RatingComponent} from '../../shared/rating/rating.component';
 import {AccommodationService} from '../shared/accommodation.service';
 import {AccommodationServiceMock} from '../shared/accommodation.service.mock';
 

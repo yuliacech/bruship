@@ -5,7 +5,8 @@
   </div>
 
   <div class="card-img-top">
-    <img *ngIf="review.coverPhoto; else defaultCoverPhoto" src="{{review?.coverPhoto}}" alt="review cover photo">
+    <img *ngIf="review.photos && review.photos.length > 0; else defaultCoverPhoto" src="{{review?.photos[0]}}"
+         alt="review cover photo">
     <ng-template #defaultCoverPhoto>
       <img src="../../../../assets/img/no_img.png" alt="no cover photo">
     </ng-template>
@@ -17,7 +18,7 @@
         <app-rating [rating]="review?.rating"></app-rating>
       </div>
       <div class="float-right" *ngIf="review.duration">
-        stayed {{review?.duration?.amount}} {{review?.duration?.unit}}
+        stayed {{review.duration.amount}} {{review.duration.unit}}
       </div>
 
     </div>
@@ -26,7 +27,7 @@
         <app-address [address]="review?.address"></app-address>
       </div>
       <div class="float-right">
-        <app-price [price]="review?.price?.amount"></app-price>
+        <app-price [price]="review?.price"></app-price>
       </div>
     </div>
 

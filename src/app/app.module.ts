@@ -12,9 +12,9 @@ import {ContactUsComponent} from './contact-us/contact-us.component';
 import {TopListComponent} from './accommodations/top-list/top-list.component';
 import {TopDetailComponent} from './accommodations/top-list/top-detail/top-detail.component';
 import {AccommodationService} from './accommodations/shared/accommodation.service';
-import {AddressComponent} from './accommodations/sections/address/address.component';
-import {RatingComponent} from './accommodations/sections/rating/rating.component';
-import {PriceComponent} from './accommodations/sections/price/price.component';
+import {AddressComponent} from './shared/address/address.component';
+import {RatingComponent} from './shared/rating/rating.component';
+import {PriceComponent} from './shared/price/price.component';
 import {MapListComponent} from './accommodations/map-list/map-list.component';
 import {MapDetailComponent} from './accommodations/map-list/map-detail/map-detail.component';
 import {FooterComponent} from './footer/footer.component';
@@ -30,6 +30,7 @@ import {ReviewListComponent} from './user/review-list/review-list.component';
 import {ReviewDetailComponent} from './user/review-list/review-detail/review-detail.component';
 import {ReviewFormComponent} from './user/review-form/review-form.component';
 import {GooglePlacesAutocompleteDirective} from './shared/google-places-autocomplete/google-places-autocomplete.directive';
+import {FileValueAccessorDirective} from '@app/shared/file-value-accessor/file-value-accessor.directive';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
@@ -59,7 +60,8 @@ const BRUSHIP_ROUTES: Routes = [
     ReviewListComponent,
     ReviewDetailComponent,
     ReviewFormComponent,
-    GooglePlacesAutocompleteDirective
+    GooglePlacesAutocompleteDirective,
+    FileValueAccessorDirective
   ],
   imports: [
     BrowserModule,

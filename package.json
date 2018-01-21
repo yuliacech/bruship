@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "build:test": "ng build --prod --env=test --output-path docs --base-href https://solid-flow.github.io/bruship/ && cp ./docs/index.html ./docs/404.html",
-    "build:prod": "ng build --prod --output-path docs-prod --base-href http://bruship.solid-flow.com/",
+    "build:prod": "ng build --prod --output-path build --base-href http://bruship.solid-flow.com/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

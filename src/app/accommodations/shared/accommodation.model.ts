@@ -1,16 +1,19 @@
-import {Address} from './address.model';
-import {AveragePrice} from './average.price.model';
-import {AverageRating} from '@app/accommodations/shared/average.rating.model';
+import {Address} from '@app/shared/models/address.model';
+import {Price} from '@app/shared/models/price.model';
 
 export class Accommodation {
-  id: string;
-  name: string;
-  coverPhoto: string;
-  averageRating: AverageRating;
+  _id: string;
+  address: Address;
+  addressSlug: string;
   location: {
     latitude: number;
     longitude: number;
   };
-  address: Address;
-  averagePrice: AveragePrice;
+  createdBy: string;
+  createdTimestamp: Date;
+  rating: number;
+  reviews: string[];
+  latestReview: string;
+  photos: string[];
+  price: Price;
 }

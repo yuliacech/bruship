@@ -4,8 +4,8 @@
 
 <div class="card-container">
   <div>
-    <img *ngIf="accommodation.coverPhoto; else defaultCoverPhoto" src="{{accommodation?.coverPhoto}}"
-         alt="accommodation cover photo">
+    <img *ngIf="accommodation.photos && accommodation.photos.length > 0; else defaultCoverPhoto"
+         src="{{accommodation?.photos[0]}}" alt="accommodation cover photo">
     <ng-template #defaultCoverPhoto>
       <img src="assets/img/no_img.png" alt="no cover photo">
     </ng-template>
@@ -15,10 +15,10 @@
       <app-address [address]="accommodation?.address"></app-address>
     </div>
     <div>
-      <app-rating [rating]="accommodation?.averageRating?.rating"></app-rating>
+      <app-rating [rating]="accommodation?.rating"></app-rating>
     </div>
     <div>
-      <app-price [price]="accommodation?.averagePrice?.price"></app-price>
+      <app-price [price]="accommodation?.price"></app-price>
     </div>
   </div>
 </div>

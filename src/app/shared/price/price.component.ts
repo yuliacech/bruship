@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Price} from 'app/shared/models/price.model';
 
 @Component({
   selector: 'app-price',
@@ -6,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./price.component.less']
 })
 export class PriceComponent implements OnInit {
-  @Input() price: number;
+  @Input() price: Price;
   constructor() { }
 
   ngOnInit() {

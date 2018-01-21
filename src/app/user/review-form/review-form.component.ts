@@ -1,5 +1,5 @@
 import {ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AccountService} from 'app/user/account/account.service';
 import {} from '@types/googlemaps';
 import PlaceResult = google.maps.places.PlaceResult;
@@ -13,6 +13,7 @@ export class ReviewFormComponent implements OnInit {
 
   @Input() hidden: boolean;
   form: FormGroup;
+  fileForm: FormControl;
   submitDisabled = false;
   hideAddress = true;
   reviewCreated = false;
@@ -23,6 +24,7 @@ export class ReviewFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
+      inputLocation: [''],
       address: this.formBuilder.group({
         streetName: ['', Validators.required],
         houseNumber: ['', Validators.required],
@@ -40,16 +42,20 @@ export class ReviewFormComponent implements OnInit {
         amount: [''],
         currency: ['EUR'],
         period: ['month']
-      })
-
+      }),
     });
 
+    this.fileForm = new FormControl();
+
+    this.fileForm.valueChanges.subscribe((v) => {
+      console.log('files');
+      console.log(v);
+    });
   }
 
   fillAddress(place: PlaceResult) {
     this.hideAddress = false;
     this.form.get('address').markAsDirty();
-    this.changeDetector.detectChanges();
     place.address_components.forEach(addressComponent => {
       addressComponent.types.forEach(addressType => {
         switch (addressType) {
@@ -76,25 +82,30 @@ export class ReviewFormComponent implements OnInit {
           default: {
             break;
           }
-
-
         }
       });
     });
+    this.changeDetector.detectChanges();
   }
 
   submitReview() {
     console.log(this.form.getRawValue());
+
     this.submitDisabled = true;
     this.reviewCreated = false;
     this.reviewFailed = false;
-    this.accountService.submitReview(this.form.getRawValue()).subscribe(data => {
+    this.accountService.submitReview(this.form.getRawValue(), this.fileForm.value).subscribe(data => {
+      // TODO change to custom reset
       this.form.reset();
+      this.form.get('duration').patchValue({unit: 'month'});
+      this.form.get('price').patchValue({currency: 'EUR'});
       this.submitDisabled = false;
       this.reviewAdded.emit();
       this.reviewCreated = true;
+      this.hideAddress = true;
       console.log(data);
     }, error => {
+      this.submitDisabled = false;
       this.reviewFailed = true;
       console.log(error);
     });

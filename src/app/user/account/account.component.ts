@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '@app/shared/auth/auth.service';
 import {AccountService} from './account.service';
 import 'rxjs/add/operator/map';
+import {Review} from '@app/user/review.model';
 
 @Component({
   selector: 'app-account',
@@ -11,7 +12,7 @@ import 'rxjs/add/operator/map';
 export class AccountComponent implements OnInit {
 
   profile: any;
-  reviews: any[];
+  reviews: Review[];
   hideReviewForm = true;
   constructor(public auth: AuthService, public accountService: AccountService) { }
 

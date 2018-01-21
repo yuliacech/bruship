@@ -4,9 +4,9 @@ import { MapListComponent } from './map-list.component';
 import {AgmCoreModule} from '@agm/core';
 import {AccommodationService} from '../shared/accommodation.service';
 import {AccommodationServiceMock} from '../shared/accommodation.service.mock';
-import {PriceComponent} from '../sections/price/price.component';
-import {AddressComponent} from '../sections/address/address.component';
-import {RatingComponent} from '../sections/rating/rating.component';
+import {PriceComponent} from '../../shared/price/price.component';
+import {AddressComponent} from '../../shared/address/address.component';
+import {RatingComponent} from '../../shared/rating/rating.component';
 import {MapDetailComponent} from './map-detail/map-detail.component';
 
 describe('MapListComponent', () => {

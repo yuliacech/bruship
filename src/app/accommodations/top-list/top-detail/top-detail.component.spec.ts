@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopDetailComponent } from './top-detail.component';
-import {PriceComponent} from '../../sections/price/price.component';
-import {AddressComponent} from '../../sections/address/address.component';
-import {RatingComponent} from '../../sections/rating/rating.component';
+import {PriceComponent} from '../../../shared/price/price.component';
+import {AddressComponent} from '../../../shared/address/address.component';
+import {RatingComponent} from '../../../shared/rating/rating.component';
 import {MapDetailComponent} from '../../map-list/map-detail/map-detail.component';
 
 describe('TopDetailComponent', () => {
