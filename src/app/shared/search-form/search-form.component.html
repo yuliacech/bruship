@@ -1,0 +1,7 @@
+<form class="form-inline my-2 my-lg-0">
+  <input appGooglePlacesAutocomplete (placeSelected)="searchService.place = $event"
+         class="search-input form-control my-1 mx-auto ml-sm-auto mr-sm-1"
+         type="search" placeholder="Type an address, e.g. 'Rue Haute'..." aria-label="Search"
+  (keydown.enter)="onEnter();">
+  <button type="button" class="search-btn btn mx-auto mr-sm-auto ml-sm-1" (click)="onClick();">Search</button>
+</form>

@@ -13,6 +13,11 @@
         <!-- TODO accessability <span class="sr-only">(current)</span> -->
       </li>
       <li class="nav-item">
+        <a class="nav-link" routerLink="/search" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+          Search</a>
+        <!-- TODO accessability <span class="sr-only">(current)</span> -->
+      </li>
+      <li class="nav-item">
         <a class="nav-link" routerLink="/contact_us" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
           Contact us</a>
         <!-- TODO accessability <span class="sr-only">(current)</span> -->
@@ -36,9 +41,5 @@
       <span class="login-btn-label">logout</span>
     </div>
 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="search-form form-control mr-sm-2" type="search" placeholder="Type an address..." aria-label="Search">
-      <button class="search-btn btn my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>

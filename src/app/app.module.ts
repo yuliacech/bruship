@@ -34,12 +34,15 @@ import { SearchComponent } from './search/search.component';
 import {SearchService} from '@app/search/search.service';
 import { SearchDetailComponent } from './search/search-detail/search-detail.component';
 import { AccommodationCardComponent } from './shared/accommodation-card/accommodation-card.component';
+import { SearchFormComponent } from './shared/search-form/search-form.component';
+import { AccommodationComponent } from './accommodation/accommodation.component';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'contact_us', component: ContactUsComponent },
   { path: 'account', component: AccountComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'accommodations/:slug', component: AccommodationComponent },
   { path: '**', component: MainPageComponent }
 ];
 
@@ -67,7 +70,9 @@ const BRUSHIP_ROUTES: Routes = [
     FileValueAccessorDirective,
     SearchComponent,
     SearchDetailComponent,
-    AccommodationCardComponent
+    AccommodationCardComponent,
+    SearchFormComponent,
+    AccommodationComponent
   ],
   imports: [
     BrowserModule,

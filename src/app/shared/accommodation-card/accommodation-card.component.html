@@ -1,4 +1,4 @@
-<div class="card">
+<div (click)="onClick()" class="card">
   <div class="card-img-top">
     <img *ngIf="accommodation.photos && accommodation.photos.length > 0; else defaultCoverPhoto"
          src="{{accommodation?.photos[0]}}" alt="accommodation cover photo">

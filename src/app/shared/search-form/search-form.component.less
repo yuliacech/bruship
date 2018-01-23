@@ -1,0 +1,92 @@
+@import "../../../palette";
+
+.search-input {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  width: 200px;
+  @media (min-width: 576px) {
+    width: 250px;
+  }
+  @media (min-width: 768px) {
+    width: 300px;
+  }
+  @media (min-width: 992px) {
+    width: 400px;
+  }
+  -webkit-transition: all 0.5s; /* Safari */
+  transition: all 0.5s;
+
+  background: transparent;
+
+  border-color: @textPrimaryColor;
+  color: @textPrimaryColor;
+
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: @textPrimaryColor;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: @textPrimaryColor;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: @textPrimaryColor;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: @textPrimaryColor;
+}
+:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: @secondaryTextColor;
+}
+:focus::-moz-placeholder { /* Firefox 19+ */
+  color: @secondaryTextColor;
+}
+:focus:-ms-input-placeholder { /* IE 10+ */
+  color: @secondaryTextColor;
+}
+:focus:-moz-placeholder { /* Firefox 18- */
+  color: @secondaryTextColor;
+}
+
+
+form:focus-within > .search-input{
+  width: 250px;
+  @media (min-width: 576px) {
+    width: 350px;
+  }
+  @media (min-width: 768px) {
+    width: 500px;
+  }
+  @media (min-width: 992px) {
+    width: 700px;
+  }
+
+  border-color: @dividerColor;
+  color: @secondaryTextColor;
+  background-color: @textPrimaryColor;
+}
+form:focus-within > .search-btn {
+  border-color: @dividerColor;
+  color: @secondaryTextColor;
+  background-color: @textPrimaryColor;
+}
+
+.search-btn {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  background: transparent;
+
+  border-color: @textPrimaryColor;
+  color: @textPrimaryColor;
+  cursor: pointer;
+
+}
+.search-btn:hover {
+  border-color: @dividerColor;
+  color: @secondaryTextColor;
+  background-color: @textPrimaryColor;
+}

@@ -10,24 +10,28 @@ import {Accommodation} from '@app/accommodations/shared/accommodation.model';
 })
 export class SearchComponent implements OnInit {
 
-  place: PlaceResult;
   foundAccommodations: Accommodation[];
+  searchPlace: PlaceResult;
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
-    if (this.searchService.place) {
-
-
-      this.place = this.searchService.place;
-      this.searchService.findAccommodations(this.place.geometry.location.lat() + '', this.place.geometry.location.lng() + '')
-        .subscribe(data => {
-          this.foundAccommodations = data;
-        }, error => {
-          console.log(error);
-        });
-    }
     console.log(this.searchService.place);
+    if (this.searchService.place) {
+      this.performSearch();
+    }
+  }
 
+  performSearch() {
+
+    this.searchService.findAccommodations(this.searchService.place.geometry.location.lat() + '',
+      this.searchService.place.geometry.location.lng() + '')
+      .subscribe(data => {
+        this.searchPlace = this.searchService.place;
+        this.searchService.place = null;
+        this.foundAccommodations = data;
+      }, error => {
+        console.log(error);
+      });
   }
 
 }

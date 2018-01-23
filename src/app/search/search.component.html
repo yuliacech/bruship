@@ -1,20 +1,45 @@
-<div class="container container-margin search-container">
-  <div class="row">
-    <div class="col-sm container-title">
-      <h3>Search for best accommodations</h3>
+<div class="container-fluid search-container">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm container-title">
+        <h1>Search for best accommodations</h1>
+      </div>
+    </div>
+
+    <div class="row search-form">
+      <div class="col-sm">
+        <app-search-form (searchPerformed)="performSearch()"></app-search-form>
+      </div>
+    </div>
+
+    <div *ngIf="foundAccommodations" class="search-results">
+      <div class="row">
+        <div class="search-results-title">
+          <div *ngIf="foundAccommodations.length > 1">
+            <h3>There are {{foundAccommodations?.length}} accommodations near
+              {{searchPlace?.formatted_address}}</h3>
+          </div>
+          <div *ngIf="foundAccommodations.length === 1">
+            <h3>There is 1 accommodation near
+              {{searchPlace?.formatted_address}}</h3>
+          </div>
+          <div *ngIf="foundAccommodations.length === 0">
+            <h3>There is no accommodations near
+              {{searchPlace?.formatted_address}}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-sm-4" *ngFor="let accommodation of foundAccommodations">
+          <app-accommodation-card [accommodation]="accommodation"></app-accommodation-card>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm ">
-    We found {{foundAccommodtions?.length}} accommodations for your search {{place?.formatted_address}}:
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-4" *ngFor="let accommodation of foundAccommodations">
-      <app-accommodation-card [accommodation]="accommodation"></app-accommodation-card>
-    </div>
-
-  </div>
 </div>
+

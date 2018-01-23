@@ -19,7 +19,7 @@
                   <h3>Hello, user</h3>
                 </ng-template>
               </div>
-              <button class="btn toggle-form-btn" [ngClass]="{'toggled': !hideReviewForm}"
+              <button class="btn toggle-form-btn my-1" [ngClass]="{'toggled': !hideReviewForm}"
                       (click)="toggleHideReviewForm()">
                 <span *ngIf="hideReviewForm; else closeFormLabel">Add new review</span>
                 <ng-template #closeFormLabel>
@@ -27,7 +27,7 @@
                 </ng-template>
               </button>
 
-              <button class="btn toggle-form-btn" (click)="auth.logout()">LOGOUT</button>
+              <button class="btn toggle-form-btn my-1" (click)="auth.logout()">LOGOUT</button>
             </div>
           </div>
 

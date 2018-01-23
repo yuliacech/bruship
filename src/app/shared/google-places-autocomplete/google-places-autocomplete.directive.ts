@@ -17,6 +17,7 @@ export class GooglePlacesAutocompleteDirective implements OnInit {
       console.log(data);
       const autocomplete = new google.maps.places.Autocomplete(this.elementRef.nativeElement, {types: ['geocode']});
       google.maps.event.addListener(autocomplete, 'place_changed', () => {
+
         console.log('place changed');
         const place = autocomplete.getPlace();
         this.placeSelected.emit(place);
