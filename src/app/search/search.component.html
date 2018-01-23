@@ -1,0 +1,20 @@
+<div class="container container-margin search-container">
+  <div class="row">
+    <div class="col-sm container-title">
+      <h3>Search for best accommodations</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm ">
+    We found {{foundAccommodtions?.length}} accommodations for your search {{place?.formatted_address}}:
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let accommodation of foundAccommodations">
+      <app-accommodation-card [accommodation]="accommodation"></app-accommodation-card>
+    </div>
+
+  </div>
+</div>

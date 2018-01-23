@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {} from '@types/googlemaps';
+import PlaceResult = google.maps.places.PlaceResult;
+import {Router} from '@angular/router';
+import {SearchService} from '@app/search/search.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private searchService: SearchService) { }
 
   ngOnInit() {
   }
 
+  performSearch(place: PlaceResult) {
+    this.searchService.place = place;
+    this.router.navigate(['/search']);
+
+  }
 }

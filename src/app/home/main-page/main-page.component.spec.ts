@@ -8,7 +8,7 @@ import {AgmCoreModule} from '@agm/core';
 import {RouterTestingModule} from '@angular/router/testing';
 import {NavbarComponent} from '../navbar/navbar.component';
 import {PriceComponent} from '../accommodations/sections/price/price.component';
-import {TopDetailComponent} from '../accommodations/top-list/top-detail/top-detail.component';
+import {TopDetailComponent} from '../accommodations/top-list/accommodation-detail/accommodation-detail.component';
 import {AccommodationService} from '../accommodations/shared/accommodation.service';
 import {AccommodationServiceMock} from '../accommodations/shared/accommodation.service.mock';
 import {FooterComponent} from '../footer/footer.component';

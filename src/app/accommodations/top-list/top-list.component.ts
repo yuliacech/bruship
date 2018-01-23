@@ -14,7 +14,7 @@ export class TopListComponent implements OnInit {
   constructor(private accommodationService: AccommodationService) { }
 
   ngOnInit() {
-    this.accommodationService.getTopAccommodations(MAX_TOP_ACCOMMODATIONS_NUMBER).subscribe(data => {
+    this.accommodationService.getAccommodations(MAX_TOP_ACCOMMODATIONS_NUMBER).subscribe(data => {
       this.topAccommodations = data;
     });
   }

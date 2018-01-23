@@ -5,7 +5,6 @@ import {MainPageComponent} from './home/main-page/main-page.component';
 import {FooterComponent} from './footer/footer.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {TopListComponent} from './accommodations/top-list/top-list.component';
-import {TopDetailComponent} from './accommodations/top-list/top-detail/top-detail.component';
 import {RatingComponent} from './shared/rating/rating.component';
 import {PriceComponent} from './shared/price/price.component';
 import {AddressComponent} from './shared/address/address.component';
@@ -18,7 +17,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent, TopListComponent, TopDetailComponent, RatingComponent, PriceComponent, AddressComponent,
+        AppComponent, TopListComponent, RatingComponent, PriceComponent, AddressComponent,
         MapListComponent, MapDetailComponent, NavbarComponent, MainPageComponent, FooterComponent
       ],
       imports: [ RouterTestingModule,

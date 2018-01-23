@@ -2,7 +2,8 @@
   <div class="background-layer">
     <div class="middle">
       <h1><span class="middle-text">Find your accommodation<br>in Brussels</span></h1>
-      <input class="middle-search form-control" type="text" placeholder="Type an address...">
+      <input appGooglePlacesAutocomplete (placeSelected)="performSearch($event)" class="middle-search form-control" type="text" placeholder="Type an address...">
+      <button>Search</button>
     </div>
   </div>
 </div>

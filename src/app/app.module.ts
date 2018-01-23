@@ -10,7 +10,6 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {MainPageComponent} from './home/main-page/main-page.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {TopListComponent} from './accommodations/top-list/top-list.component';
-import {TopDetailComponent} from './accommodations/top-list/top-detail/top-detail.component';
 import {AccommodationService} from './accommodations/shared/accommodation.service';
 import {AddressComponent} from './shared/address/address.component';
 import {RatingComponent} from './shared/rating/rating.component';
@@ -31,11 +30,16 @@ import {ReviewDetailComponent} from './user/review-list/review-detail/review-det
 import {ReviewFormComponent} from './user/review-form/review-form.component';
 import {GooglePlacesAutocompleteDirective} from './shared/google-places-autocomplete/google-places-autocomplete.directive';
 import {FileValueAccessorDirective} from '@app/shared/file-value-accessor/file-value-accessor.directive';
+import { SearchComponent } from './search/search.component';
+import {SearchService} from '@app/search/search.service';
+import { SearchDetailComponent } from './search/search-detail/search-detail.component';
+import { AccommodationCardComponent } from './shared/accommodation-card/accommodation-card.component';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'contact_us', component: ContactUsComponent },
   { path: 'account', component: AccountComponent },
+  { path: 'search', component: SearchComponent },
   { path: '**', component: MainPageComponent }
 ];
 
@@ -46,7 +50,6 @@ const BRUSHIP_ROUTES: Routes = [
     MainPageComponent,
     ContactUsComponent,
     TopListComponent,
-    TopDetailComponent,
     AddressComponent,
     RatingComponent,
     PriceComponent,
@@ -61,7 +64,10 @@ const BRUSHIP_ROUTES: Routes = [
     ReviewDetailComponent,
     ReviewFormComponent,
     GooglePlacesAutocompleteDirective,
-    FileValueAccessorDirective
+    FileValueAccessorDirective,
+    SearchComponent,
+    SearchDetailComponent,
+    AccommodationCardComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +80,7 @@ const BRUSHIP_ROUTES: Routes = [
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AccommodationService, NewsletterService, AuthService, AccountService],
+  providers: [AccommodationService, NewsletterService, AuthService, AccountService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
