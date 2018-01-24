@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from 'environments/environment';
 import {Observable} from 'rxjs/Observable';
-import {Review} from '@app/user/review.model';
+import {Review} from '@app/shared/review.model';
 
 @Injectable()
 export class AccountService {

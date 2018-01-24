@@ -1,3 +1,28 @@
-<p>
-  accommodation works!
-</p>
+<section class="container navbar-margin">
+  <div *ngIf="accommodation$ | async as accommodation" class="accommodation-container">
+    <div class="row">
+      <div class="col-sm-3">
+        <app-rating [editable]="false" [rating]="accommodation.rating"></app-rating>
+      </div>
+      <div class="col-sm-6">
+        <h3>{{accommodation.address.streetName}} {{accommodation.address.houseNumber}},
+          {{accommodation.address.postalCode}} {{accommodation.address.city}}</h3>
+      </div>
+      <div *ngIf="accommodation.price.amount" class="col-sm-3">
+        <app-price [price]="accommodation.price"></app-price>
+      </div>
+    </div>
+    <div class="row">
+      <div class="photo-carousel-container">
+        <app-photo-carousel [photos]="accommodation.photos"></app-photo-carousel>
+      </div>
+    </div>
+
+    <div class="reviews-container">
+      <h3>Reviews ({{reviews$.length}})</h3>
+      <app-review-card *ngFor="let review$ of reviews$" [review]="review$ | async"></app-review-card>
+    </div>
+
+
+  </div>
+</section>

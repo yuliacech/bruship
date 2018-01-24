@@ -14,5 +14,8 @@ export class AccommodationService {
       + maxNumber);
   }
 
+  getAccommodationByAddressSlug(addressSlug: string): Observable<Accommodation> {
+    return this.httpClient.get<Accommodation>(environment.baseApiUrl + '/api/accommodations/addressSlug/' + addressSlug);
+  }
 }
 

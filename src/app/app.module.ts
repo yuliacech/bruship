@@ -4,6 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AgmCoreModule} from '@agm/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app.component';
 import {NavbarComponent} from './navbar/navbar.component';
@@ -36,6 +37,9 @@ import { SearchDetailComponent } from './search/search-detail/search-detail.comp
 import { AccommodationCardComponent } from './shared/accommodation-card/accommodation-card.component';
 import { SearchFormComponent } from './shared/search-form/search-form.component';
 import { AccommodationComponent } from './accommodation/accommodation.component';
+import { PhotoCarouselComponent } from './photo-carousel/photo-carousel.component';
+import { ReviewCardComponent } from './review-card/review-card.component';
+import {ReviewService} from '@app/shared/review.service';
 
 const BRUSHIP_ROUTES: Routes = [
   { path: '', component: MainPageComponent },
@@ -72,7 +76,9 @@ const BRUSHIP_ROUTES: Routes = [
     SearchDetailComponent,
     AccommodationCardComponent,
     SearchFormComponent,
-    AccommodationComponent
+    AccommodationComponent,
+    PhotoCarouselComponent,
+    ReviewCardComponent
   ],
   imports: [
     BrowserModule,
@@ -83,9 +89,10 @@ const BRUSHIP_ROUTES: Routes = [
       libraries: ['places', 'geometry']
     }),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule.forRoot()
   ],
-  providers: [AccommodationService, NewsletterService, AuthService, AccountService, SearchService],
+  providers: [AccommodationService, NewsletterService, AuthService, AccountService, SearchService, ReviewService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

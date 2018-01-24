@@ -2,11 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Review} from '@app/shared/review.model';
 
 @Component({
-  selector: 'app-review-detail',
-  templateUrl: './review-detail.component.html',
-  styleUrls: ['./review-detail.component.less']
+  selector: 'app-review-card',
+  templateUrl: './review-card.component.html',
+  styleUrls: ['./review-card.component.less']
 })
-export class ReviewDetailComponent implements OnInit {
+export class ReviewCardComponent implements OnInit {
 
   @Input() review: Review;
   constructor() { }

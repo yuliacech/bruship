@@ -1,6 +1,6 @@
 import {Address} from '@app/shared/models/address.model';
-import {Price} from '@app/shared/models/price.model';
 import {Duration} from '@app/shared/models/duration.model';
+import {Price} from '@app/shared/models/price.model';
 
 export class Review {
   _id: string;
