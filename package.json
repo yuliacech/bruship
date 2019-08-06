@@ -6,9 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "build:prod": "ng build --prod --output-path dist --base-href http://bruship.solid-flow.com/ && cp .htaccess ./dist/.htaccess",
-    "deploy:gh-pages": "ng build --prod  --base-href https://solid-flow.github.io/bruship/ && npx ngh",
-    "deploy:prod": "npm run build:prod && npx ngh --branch=build",
+    "build:prod": "ng build --prod --output-path dist --base-href http://bruship.yuliacech.com/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -40,7 +38,6 @@
     "@types/jasmine": "2.8.4",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "8.5.7",
-    "angular-cli-ghpages": "^0.5.3",
     "codelyzer": "^4.0.1",
     "jasmine-core": "2.8.0",
     "jasmine-spec-reporter": "4.2.1",

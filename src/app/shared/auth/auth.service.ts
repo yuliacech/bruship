@@ -9,7 +9,7 @@ export class AuthService {
 
   auth0 = new auth0.WebAuth({
     clientID: environment.auth0ID,
-    domain: 'solid-flow.eu.auth0.com',
+    domain: 'yuliacech.auth0.com',
     responseType: 'token id_token',
     audience: 'bruship-server/api',
     redirectUri: environment.originUrl + '/callback',

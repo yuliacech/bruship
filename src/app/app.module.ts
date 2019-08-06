@@ -85,7 +85,7 @@ const BRUSHIP_ROUTES: Routes = [
     HttpClientModule,
     RouterModule.forRoot(BRUSHIP_ROUTES),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBEqwaI0P1yyWmIZ7a4vUPljajobeGc8z8',
+      apiKey: 'AIzaSyDzgnNt_sO7a_6Ea1ekwvz-AUz_yUQag6E',
       libraries: ['places', 'geometry']
     }),
     FormsModule,

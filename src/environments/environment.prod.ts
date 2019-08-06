@@ -2,6 +2,6 @@ export const environment = {
   production: true,
   baseApiUrl: 'https://bruship-server.herokuapp.com',
   trackingID: 'UA-111362455-1',
-  originUrl: 'http://bruship.solid-flow.com',
-  auth0ID: 'ZgWnE2LduQt2MAXrLrpHcCCrKSj7W4Ka'
+  originUrl: 'http://bruship.yuliacech.com',
+  auth0ID: 'KCe6woO5i4jWrPVlFgeNQI0VBH4xklK3'
 };
