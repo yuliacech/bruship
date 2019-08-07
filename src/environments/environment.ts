@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: 'http://localhost:8080',
+  baseApiUrl: 'https://bruship-server.herokuapp.com',
   trackingID: '',
   originUrl: 'http://localhost:4200',
   auth0ID: 'KCe6woO5i4jWrPVlFgeNQI0VBH4xklK3'
