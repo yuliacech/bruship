@@ -23,8 +23,6 @@ export class RatingComponent implements OnInit, OnChanges {
   }
 
   initStarIcons() {
-    // TODO investigate why input as number is not working as is
-    this.rating = parseFloat(this.rating + '');
     this.starIcons = [];
     for (let i = 1; i < MAX_RATING + 1; i++) {
       this.starIcons.push(this.getStarIcon(i));

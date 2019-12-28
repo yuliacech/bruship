@@ -19,8 +19,10 @@ export class ReviewFormComponent implements OnInit {
   reviewCreated = false;
   reviewFailed = false;
   @Output() reviewAdded = new EventEmitter();
+
   constructor(private formBuilder: FormBuilder, private accountService: AccountService,
-              private changeDetector: ChangeDetectorRef) { }
+              private changeDetector: ChangeDetectorRef) {
+  }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -95,7 +97,6 @@ export class ReviewFormComponent implements OnInit {
     this.reviewCreated = false;
     this.reviewFailed = false;
     this.accountService.submitReview(this.form.getRawValue(), this.fileForm.value).subscribe(data => {
-      // TODO change to custom reset
       this.form.reset();
       this.form.get('duration').patchValue({unit: 'month'});
       this.form.get('price').patchValue({currency: 'EUR'});
