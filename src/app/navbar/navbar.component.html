@@ -8,35 +8,41 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'
+           #homeLink="routerLinkActive">
           Home</a>
-        <!-- TODO accessability <span class="sr-only">(current)</span> -->
+        <span class="sr-only" *ngIf="homeLink.isActive">(current)</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/search" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+        <a class="nav-link" routerLink="/search" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'
+           #searchLink="routerLinkActive">
           Search</a>
-        <!-- TODO accessability <span class="sr-only">(current)</span> -->
+        <span class="sr-only" *ngIf="searchLink.isActive">(current)</span>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/contact_us" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+        <a class="nav-link" routerLink="/contact_us" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'
+           #contactLink="routerLinkActive">
           Contact us</a>
-        <!-- TODO accessability <span class="sr-only">(current)</span> -->
+        <span class="sr-only" *ngIf="contactLink.isActive">(current)</span>
       </li>
 
       <li class="nav-item" *ngIf="authService.isAuthenticated()">
-        <a class="nav-link" routerLink="/account" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'>
+        <a class="nav-link" routerLink="/account" routerLinkActive="active" [routerLinkActiveOptions]='{exact:true}'
+           #accountLink="routerLinkActive">
           My account</a>
-        <!-- TODO accessability <span class="sr-only">(current)</span> -->
+        <span class="sr-only" *ngIf="accountLink.isActive">(current)</span>
       </li>
 
     </ul>
 
-    <div role="button" class="btn login-button mr-sm-2" (click)="authService.login()" *ngIf="!authService.isAuthenticated()">
+    <div role="button" class="btn login-button mr-sm-2" (click)="authService.login()"
+         *ngIf="!authService.isAuthenticated()">
       <i class="material-icons">person_outline</i>
       <span class="login-btn-label">login</span>
     </div>
 
-    <div role="button" class="btn login-button mr-sm-2" (click)="authService.logout()" *ngIf="authService.isAuthenticated()">
+    <div role="button" class="btn login-button mr-sm-2" (click)="authService.logout()"
+         *ngIf="authService.isAuthenticated()">
       <i class="material-icons icon-flipped">exit_to_app</i>
       <span class="login-btn-label">logout</span>
     </div>
