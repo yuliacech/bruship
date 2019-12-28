@@ -1,11 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MapDetailComponent } from './map-detail.component';
-import {AddressComponent} from '../../../shared/address/address.component';
-import {RatingComponent} from '../../../shared/rating/rating.component';
-import {PriceComponent} from '../../../shared/price/price.component';
-import {AccommodationService} from '../../shared/accommodation.service';
-import {AccommodationServiceMock} from '../../shared/accommodation.service.mock';
+import {MapDetailComponent} from './map-detail.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('MapDetailComponent', () => {
   let component: MapDetailComponent;
@@ -13,9 +9,10 @@ describe('MapDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapDetailComponent, AddressComponent, RatingComponent, PriceComponent]
+      declarations: [MapDetailComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

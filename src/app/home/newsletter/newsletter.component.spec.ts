@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewsletterComponent } from './newsletter.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NewsletterService} from '@app/home/newsletter/newsletter.service';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('NewsletterComponent', () => {
   let component: NewsletterComponent;
@@ -8,7 +11,13 @@ describe('NewsletterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsletterComponent ]
+      imports: [ReactiveFormsModule, FormsModule],
+      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [ NewsletterComponent ],
+      providers: [ {
+        provide: NewsletterService,
+        useValue: jasmine.createSpy()
+      }]
     })
     .compileComponents();
   }));

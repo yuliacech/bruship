@@ -15,7 +15,6 @@ export class SearchComponent implements OnInit {
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
-    console.log(this.searchService.place);
     if (this.searchService.place) {
       this.performSearch();
     }

@@ -1,6 +1,6 @@
 <div (click)="onClick()" class="card">
   <div class="card-img-top">
-    <img *ngIf="accommodation.photos && accommodation.photos.length > 0; else defaultCoverPhoto"
+    <img *ngIf="accommodation?.photos && accommodation?.photos.length > 0; else defaultCoverPhoto"
          src="{{accommodation?.photos[0]}}" alt="accommodation cover photo">
     <ng-template #defaultCoverPhoto>
       <img src="../../../assets/img/no_img.png" alt="no cover photo">
@@ -12,7 +12,7 @@
       <div class="float-left">
         <app-rating [rating]="accommodation?.rating"></app-rating>
       </div>
-      <div class="float-right" *ngIf="accommodation.price.amount">
+      <div class="float-right" *ngIf="accommodation?.price.amount">
         <app-price [price]="accommodation?.price"></app-price>
       </div>
     </div>

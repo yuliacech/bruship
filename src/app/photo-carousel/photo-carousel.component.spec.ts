@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PhotoCarouselComponent } from './photo-carousel.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('PhotoCarouselComponent', () => {
   let component: PhotoCarouselComponent;
@@ -8,7 +9,8 @@ describe('PhotoCarouselComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhotoCarouselComponent ]
+      declarations: [ PhotoCarouselComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

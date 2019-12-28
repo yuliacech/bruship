@@ -1,16 +1,16 @@
 <div class="row review-container">
   <div class="col-sm-2">
-    <app-rating [editable]="false" [rating]="review.rating"></app-rating>
-    <app-price *ngIf="review.price" [price]="review.price"></app-price>
+    <app-rating [editable]="false" [rating]="review?.rating"></app-rating>
+    <app-price *ngIf="review?.price" [price]="review?.price"></app-price>
   </div>
   <div class="col-sm-7">
 
-    <span>{{review.review}}</span>
+    <span>{{review?.review}}</span>
   </div>
   <div class="col-sm-3">
-    <span>reviewed on {{review.timestamp | date}}</span>
+    <span>reviewed on {{review?.timestamp | date}}</span>
     <br>
-    <span *ngIf="review.duration.amount">stayed {{review.duration.amount}} {{review.duration.unit}}(s)</span>
+    <span *ngIf="review?.duration.amount">stayed {{review?.duration.amount}} {{review?.duration.unit}}(s)</span>
   </div>
 
 

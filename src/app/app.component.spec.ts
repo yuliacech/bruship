@@ -1,35 +1,23 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import {NavbarComponent} from './navbar/navbar.component';
-import {MainPageComponent} from './home/main-page/main-page.component';
-import {FooterComponent} from './footer/footer.component';
+import {TestBed, async} from '@angular/core/testing';
+import {AppComponent} from './app.component';
 import {RouterTestingModule} from '@angular/router/testing';
-import {TopListComponent} from './accommodations/top-list/top-list.component';
-import {RatingComponent} from './shared/rating/rating.component';
-import {PriceComponent} from './shared/price/price.component';
-import {AddressComponent} from './shared/address/address.component';
-import {MapListComponent} from './accommodations/map-list/map-list.component';
-import {MapDetailComponent} from './accommodations/map-list/map-detail/map-detail.component';
-import {AccommodationService} from './accommodations/shared/accommodation.service';
-import {AccommodationServiceMock} from './accommodations/shared/accommodation.service.mock';
-import {AgmCoreModule} from '@agm/core';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {AuthService} from '@app/shared/auth/auth.service';
+
 describe('AppComponent', () => {
+  const mockAuthService = jasmine.createSpyObj(['handleAuthentication']);
+  mockAuthService.handleAuthentication.and.callFake(() => {});
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent, TopListComponent, RatingComponent, PriceComponent, AddressComponent,
-        MapListComponent, MapDetailComponent, NavbarComponent, MainPageComponent, FooterComponent
+        AppComponent
       ],
-      imports: [ RouterTestingModule,
-        AgmCoreModule.forRoot({
-          apiKey: 'AIzaSyBEqwaI0P1yyWmIZ7a4vUPljajobeGc8z8'
-        })],
-      providers: [
-        {
-          provide: AccommodationService,
-          useClass: AccommodationServiceMock
-        }
-      ]
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [RouterTestingModule],
+      providers: [{
+        provide: AuthService,
+        useValue: mockAuthService
+      }]
     }).compileComponents();
   }));
   it('should create the app', async(() => {

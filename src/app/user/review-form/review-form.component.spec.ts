@@ -1,6 +1,9 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {ReviewFormComponent} from './review-form.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {AccountService} from '@app/user/account/account.service';
 
 describe('ReviewFormComponent', () => {
   let component: ReviewFormComponent;
@@ -8,9 +11,17 @@ describe('ReviewFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReviewFormComponent ]
+      imports: [ReactiveFormsModule],
+      declarations: [ReviewFormComponent],
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [
+        {
+          provide: AccountService,
+          useValue: jasmine.createSpy()
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

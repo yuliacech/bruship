@@ -1,7 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RatingComponent } from './rating.component';
+import {RatingComponent} from './rating.component';
 import {Component, ViewChild} from '@angular/core';
+
+@Component({
+  selector: 'app-host-component',
+  template: '<app-rating [rating]="rating"></app-rating>'
+})
+class TestHostComponent {
+  rating = 0;
+  @ViewChild(RatingComponent)
+  ratingComponent: RatingComponent;
+}
 
 describe('RatingComponent', () => {
   let testHostComponent: TestHostComponent;
@@ -9,7 +19,7 @@ describe('RatingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestHostComponent, RatingComponent ]
+      declarations: [TestHostComponent, RatingComponent]
     })
       .compileComponents();
   }));
@@ -87,12 +97,4 @@ describe('RatingComponent', () => {
   });
 });
 
-@Component({
-  selector: 'app-host-component',
-  template: '<app-rating [rating]="rating"></app-rating>'
-})
-class TestHostComponent {
-  rating = 0;
-  @ViewChild(RatingComponent)
-  ratingComponent: RatingComponent;
-}
+

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchFormComponent } from './search-form.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {SearchService} from '@app/search/search.service';
 
 describe('SearchFormComponent', () => {
   let component: SearchFormComponent;
@@ -8,7 +10,12 @@ describe('SearchFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchFormComponent ]
+      declarations: [ SearchFormComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [{
+        provide: SearchService,
+        useValue: jasmine.createSpy()
+      }]
     })
     .compileComponents();
   }));

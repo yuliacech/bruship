@@ -1,10 +1,6 @@
-<div>
-
-</div>
-
 <div class="card-container">
   <div>
-    <img *ngIf="accommodation.photos && accommodation.photos.length > 0; else defaultCoverPhoto"
+    <img *ngIf="accommodation?.photos && accommodation?.photos.length > 0; else defaultCoverPhoto"
          src="{{accommodation?.photos[0]}}" alt="accommodation cover photo">
     <ng-template #defaultCoverPhoto>
       <img src="assets/img/no_img.png" alt="no cover photo">

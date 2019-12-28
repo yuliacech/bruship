@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReviewCardComponent } from './review-card.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('ReviewCardComponent', () => {
   let component: ReviewCardComponent;
@@ -8,7 +9,8 @@ describe('ReviewCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReviewCardComponent ]
+      declarations: [ ReviewCardComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

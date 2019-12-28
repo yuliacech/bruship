@@ -1,29 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MapListComponent } from './map-list.component';
-import {AgmCoreModule} from '@agm/core';
+import {MapListComponent} from './map-list.component';
 import {AccommodationService} from '../shared/accommodation.service';
-import {AccommodationServiceMock} from '../shared/accommodation.service.mock';
-import {PriceComponent} from '../../shared/price/price.component';
-import {AddressComponent} from '../../shared/address/address.component';
-import {RatingComponent} from '../../shared/rating/rating.component';
-import {MapDetailComponent} from './map-detail/map-detail.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {of} from 'rxjs/observable/of';
 
 describe('MapListComponent', () => {
   let component: MapListComponent;
   let fixture: ComponentFixture<MapListComponent>;
 
+  const mockAccommodationService = jasmine.createSpyObj(['getAccommodations']);
+  mockAccommodationService.getAccommodations.and.callFake(() => of([]));
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapListComponent, MapDetailComponent, AddressComponent, RatingComponent, PriceComponent ],
-      imports: [
-        AgmCoreModule.forRoot({
-          apiKey: 'AIzaSyBEqwaI0P1yyWmIZ7a4vUPljajobeGc8z8'
-        })],
+      declarations: [MapListComponent],
+      schemas: [NO_ERRORS_SCHEMA],
       providers: [
         {
           provide: AccommodationService,
-          useClass: AccommodationServiceMock
+          useValue: mockAccommodationService
         }
       ]
     })
