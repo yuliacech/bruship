@@ -34,7 +34,6 @@ export class NewsletterComponent implements OnInit {
         this.response = 'error';
       }
     }, err => {
-      console.error(err);
       this.disableButton = false;
       this.response = 'error';
     });
