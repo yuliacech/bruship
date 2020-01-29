@@ -17,30 +17,33 @@ export class AuthService {
   });
 
   userProfile: any;
-  constructor(private router: Router) {}
+
+  constructor(private router: Router) {
+  }
+
+  private static setSession(authResult): void {
+    // Set the time that the access token will expire at
+    const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    localStorage.setItem('access_token', authResult.accessToken);
+    localStorage.setItem('id_token', authResult.idToken);
+    localStorage.setItem('expires_at', expiresAt);
+  }
 
   public login(): void {
     this.auth0.authorize();
   }
+
   public handleAuthentication(): void {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
-        this.setSession(authResult);
+        AuthService.setSession(authResult);
         this.router.navigate(['/account']);
       } else if (err) {
         this.router.navigate(['/']);
         console.log(err);
       }
     });
-  }
-
-  private setSession(authResult): void {
-    // Set the time that the access token will expire at
-    const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-    localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('expires_at', expiresAt);
   }
 
   public logout(): void {
@@ -73,5 +76,6 @@ export class AuthService {
       cb(err, profile);
     });
   }
+
 
 }

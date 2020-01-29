@@ -12,6 +12,10 @@ describe('NewsletterService', () => {
     newsletterService = new NewsletterService(<any>httpClientSpy);
   });
 
+  it('should create', () => {
+    expect(newsletterService).toBeTruthy();
+  });
+
   it('should call post method with correct params in body', () => {
     const testEmail = 'test@example.com';
     httpClientSpy.post.and.returnValue(of({email: testEmail}));
