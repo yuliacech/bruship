@@ -4,6 +4,13 @@
       <h3>Best Brussels accommodations on the map</h3>
     </div>
   </div>
+
+  <div class="row" *ngIf="loading">
+    <div class="col py-3">
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
   <div class="row">
 
     <div class="col-sm-9">

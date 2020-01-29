@@ -11,10 +11,15 @@ const MAX_TOP_ACCOMMODATIONS_NUMBER = 9;
 })
 export class TopListComponent implements OnInit {
   topAccommodations: Accommodation[];
-  constructor(private accommodationService: AccommodationService) { }
+  loading: boolean;
+
+  constructor(private accommodationService: AccommodationService) {
+  }
 
   ngOnInit() {
+    this.loading = true;
     this.accommodationService.getAccommodations(MAX_TOP_ACCOMMODATIONS_NUMBER).subscribe(data => {
+      this.loading = false;
       this.topAccommodations = data;
     });
   }

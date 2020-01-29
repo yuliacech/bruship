@@ -1,10 +1,17 @@
 <div class="container container-margin">
   <div class="row">
     <div class="col-sm container-title">
-      <app-rating [editable]="false" [rating]="5"></app-rating> <h3>Top rated accommodations in Brussels</h3>
+      <app-rating [editable]="false" [rating]="5"></app-rating>
+      <h3>Top rated accommodations in Brussels</h3>
       <app-rating [editable]="false" [rating]="5"></app-rating>
     </div>
   </div>
+  <div class="row" *ngIf="loading">
+    <div class="col py-3">
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-sm-4" *ngFor="let accommodation of topAccommodations">
       <app-accommodation-card [accommodation]="accommodation"></app-accommodation-card>

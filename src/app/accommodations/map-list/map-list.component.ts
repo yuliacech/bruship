@@ -14,10 +14,15 @@ export class MapListComponent implements OnInit {
   lat = 50.85;
   lng = 4.35;
   zoom = 12;
-  constructor(private accommodationService: AccommodationService) { }
+  loading: boolean;
+
+  constructor(private accommodationService: AccommodationService) {
+  }
 
   ngOnInit() {
+    this.loading = true;
     this.accommodationService.getAccommodations(MAX_MAP_ACCOMMODATIONS_NUMBER).subscribe(data => {
+      this.loading = false;
       this.centralAccommodations = data;
     });
   }
