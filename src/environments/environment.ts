@@ -5,7 +5,10 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: 'https://bruship-server.herokuapp.com',
+  // backend deployed on render
+  baseApiUrl: 'https://bruship-server.onrender.com',
+  // local backend
+  // baseApiUrl: 'http://localhost:8080',
   trackingID: '',
   originUrl: 'http://localhost:4200',
   auth0ID: 'KCe6woO5i4jWrPVlFgeNQI0VBH4xklK3'

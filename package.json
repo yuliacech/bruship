@@ -12,6 +12,10 @@
     "e2e": "ng e2e",
     "aws-deploy": "gulp aws-deploy"
   },
+  "engines": {
+    "npm": "<=6.13.4",
+    "node": "<=8.17.0"
+  },
   "private": true,
   "dependencies": {
     "@agm/core": "1.0.0-beta.2",
